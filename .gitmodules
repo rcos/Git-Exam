@@ -1,0 +1,3 @@
+[submodule "Auto-Grading Configuration/provided_code"]
+	path = Auto-Grading Configuration/provided_code
+	url = git@github.com:Gerzer/Git-Exam-Source.git

@@ -1,0 +1,85 @@
+{
+	"allow_system_calls": [
+		"ALLOW_SYSTEM_CALL_CATEGORY_COMMUNICATIONS_AND_NETWORKING_SIGNALS",
+		"ALLOW_SYSTEM_CALL_CATEGORY_COMMUNICATIONS_AND_NETWORKING_SOCKETS",
+		"ALLOW_SYSTEM_CALL_CATEGORY_COMMUNICATIONS_AND_NETWORKING_SOCKETS_MINIMAL",
+		"ALLOW_SYSTEM_CALL_CATEGORY_FILE_MANAGEMENT_MOVE_DELETE_RENAME_FILE_DIRECTORY",
+		"ALLOW_SYSTEM_CALL_CATEGORY_FILE_MANAGEMENT_PERMISSIONS",
+		"ALLOW_SYSTEM_CALL_CATEGORY_FILE_MANAGEMENT_RARE",
+		"ALLOW_SYSTEM_CALL_CATEGORY_PROCESS_CONTROL_ADVANCED",
+		"ALLOW_SYSTEM_CALL_CATEGORY_PROCESS_CONTROL_NEW_PROCESS_THREAD",
+		"ALLOW_SYSTEM_CALL_CATEGORY_UNKNOWN"
+	],
+	"autograding": {
+		"submission_to_validation": [
+			"URL.txt"
+		]
+	},
+	"notebook": [
+		{
+			"type": "markdown",
+			"markdown_string": "### SSH Clone URL\nEnter the SSH clone URL for your private GitHub repository."
+		},
+		{
+			"type": "short_answer",
+			"filename": "URL.txt"
+		}
+	],
+	"testcases": [
+		{
+			"title": "Basic Commit",
+			"points": 2,
+			"validation": [
+				{
+					"method": "custom_validator",
+					"command": "./part1",
+					"actual_file": "URL.txt"
+				}
+			]
+		},
+		{
+			"title": "Branching",
+			"points": 4,
+			"validation": [
+				{
+					"method": "custom_validator",
+					"command": "./part2",
+					"actual_file": "URL.txt"
+				}
+			]
+		},
+		{
+			"title": "Merging",
+			"points": 2,
+			"validation": [
+				{
+					"method": "custom_validator",
+					"command": "./part3",
+					"actual_file": "URL.txt"
+				}
+			]
+		},
+		{
+			"title": "More Branching",
+			"points": 4,
+			"validation": [
+				{
+					"method": "custom_validator",
+					"command": "./part4",
+					"actual_file": "URL.txt"
+				}
+			]
+		},
+		{
+			"title": "Simple Merge Conflict",
+			"points": 4,
+			"validation": [
+				{
+					"method": "custom_validator",
+					"command": "./part5",
+					"actual_file": "URL.txt"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,918 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C0555402295D1AF60075E57D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555400295D1AE30075E57D /* libiconv.tbd */; };
+		C0555404295D1B360075E57D /* libSystem.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555403295D1B360075E57D /* libSystem.tbd */; };
+		C0555406295D1B5B0075E57D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555405295D1B5B0075E57D /* libz.tbd */; };
+		C055541F295DEA610075E57D /* libvalgit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C055541B295DEA5A0075E57D /* libvalgit.a */; };
+		C0555427295E1E900075E57D /* libjson-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555426295E1E900075E57D /* libjson-c.a */; };
+		C0555431295E8ACA0075E57D /* Python3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C0555433295E903B0075E57D /* libgit2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05553FE295D1AC00075E57D /* libgit2.a */; };
+		C0555434295E90420075E57D /* Python3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; };
+		C0555435295E906F0075E57D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555405295D1B5B0075E57D /* libz.tbd */; };
+		C0555436295E90750075E57D /* libSystem.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555403295D1B360075E57D /* libSystem.tbd */; };
+		C0555437295E90790075E57D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555400295D1AE30075E57D /* libiconv.tbd */; };
+		C0555438295E91420075E57D /* libjson-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555426295E1E900075E57D /* libjson-c.a */; };
+		C0555439295E914F0075E57D /* Python3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; };
+		C05554562961F01A0075E57D /* libgit2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05553FE295D1AC00075E57D /* libgit2.a */; };
+		C05554572961F0420075E57D /* libgit2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05553FE295D1AC00075E57D /* libgit2.a */; };
+		C05554582961F04B0075E57D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555400295D1AE30075E57D /* libiconv.tbd */; };
+		C05554592961F0630075E57D /* libjson-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555426295E1E900075E57D /* libjson-c.a */; };
+		C055545A2961F06A0075E57D /* libSystem.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555403295D1B360075E57D /* libSystem.tbd */; };
+		C055545B2961F06F0075E57D /* libvalgit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C055541B295DEA5A0075E57D /* libvalgit.a */; };
+		C055545E2961F0780075E57D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555405295D1B5B0075E57D /* libz.tbd */; };
+		C055545F2961F0800075E57D /* Python3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; };
+		C05554602961F0800075E57D /* Python3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C05554652964FE580075E57D /* valgit.c in Sources */ = {isa = PBXBuildFile; fileRef = C05554632964FE580075E57D /* valgit.c */; };
+		C05554662964FE580075E57D /* valgit.h in Headers */ = {isa = PBXBuildFile; fileRef = C05554642964FE580075E57D /* valgit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C08A3163296638E300DDAD3D /* libgit2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05553FE295D1AC00075E57D /* libgit2.a */; };
+		C08A3164296638E900DDAD3D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555400295D1AE30075E57D /* libiconv.tbd */; };
+		C08A31652966390C00DDAD3D /* libjson-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555426295E1E900075E57D /* libjson-c.a */; };
+		C08A31662966391600DDAD3D /* libSystem.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555403295D1B360075E57D /* libSystem.tbd */; };
+		C08A31672966391C00DDAD3D /* libvalgit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C055541B295DEA5A0075E57D /* libvalgit.a */; };
+		C08A316A2966392300DDAD3D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555405295D1B5B0075E57D /* libz.tbd */; };
+		C08A316B2966392700DDAD3D /* Python3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; };
+		C08A316C2966392700DDAD3D /* Python3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C08A317B29663EAA00DDAD3D /* libgit2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05553FE295D1AC00075E57D /* libgit2.a */; };
+		C08A317C29663EAE00DDAD3D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555400295D1AE30075E57D /* libiconv.tbd */; };
+		C08A317D29663EC500DDAD3D /* libjson-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555426295E1E900075E57D /* libjson-c.a */; };
+		C08A317E29663ED100DDAD3D /* libSystem.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555403295D1B360075E57D /* libSystem.tbd */; };
+		C08A317F29663ED300DDAD3D /* libvalgit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C055541B295DEA5A0075E57D /* libvalgit.a */; };
+		C08A318229663ED700DDAD3D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555405295D1B5B0075E57D /* libz.tbd */; };
+		C08A318329663EDD00DDAD3D /* Python3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; };
+		C08A318429663EDD00DDAD3D /* Python3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C08A319329673E7700DDAD3D /* libgit2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05553FE295D1AC00075E57D /* libgit2.a */; };
+		C08A319429673E7B00DDAD3D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555400295D1AE30075E57D /* libiconv.tbd */; };
+		C08A319529673E8C00DDAD3D /* libjson-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555426295E1E900075E57D /* libjson-c.a */; };
+		C08A319629673E9400DDAD3D /* libSystem.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555403295D1B360075E57D /* libSystem.tbd */; };
+		C08A319729673E9700DDAD3D /* libvalgit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C055541B295DEA5A0075E57D /* libvalgit.a */; };
+		C08A319A29673E9B00DDAD3D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555405295D1B5B0075E57D /* libz.tbd */; };
+		C08A319B29673EA200DDAD3D /* Python3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; };
+		C08A319C29673EA200DDAD3D /* Python3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C08A31A32967681700DDAD3D /* part1.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A319E2967680700DDAD3D /* part1.c */; };
+		C08A31A42967681B00DDAD3D /* part2.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A31A02967680700DDAD3D /* part2.c */; };
+		C08A31A52967682200DDAD3D /* part3.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A31A22967680800DDAD3D /* part3.c */; };
+		C08A31A62967682500DDAD3D /* part4.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A31A12967680800DDAD3D /* part4.c */; };
+		C08A31A72967682900DDAD3D /* part5.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A319F2967680700DDAD3D /* part5.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C0555420295DEA610075E57D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C05553DD295D184A0075E57D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C055541A295DEA5A0075E57D;
+			remoteInfo = valgit;
+		};
+		C055545C2961F06F0075E57D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C05553DD295D184A0075E57D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C055541A295DEA5A0075E57D;
+			remoteInfo = valgit;
+		};
+		C08A31682966391C00DDAD3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C05553DD295D184A0075E57D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C055541A295DEA5A0075E57D;
+			remoteInfo = valgit;
+		};
+		C08A318029663ED300DDAD3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C05553DD295D184A0075E57D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C055541A295DEA5A0075E57D;
+			remoteInfo = valgit;
+		};
+		C08A319829673E9700DDAD3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C05553DD295D184A0075E57D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C055541A295DEA5A0075E57D;
+			remoteInfo = valgit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C05553F3295D18CA0075E57D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		C0555432295E8ACA0075E57D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C0555431295E8ACA0075E57D /* Python3.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C055544B2961EF770075E57D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		C05554612961F0800075E57D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C05554602961F0800075E57D /* Python3.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C08A31582966376200DDAD3D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		C08A316D2966392700DDAD3D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C08A316C2966392700DDAD3D /* Python3.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C08A317029663E6800DDAD3D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		C08A318529663EDD00DDAD3D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C08A318429663EDD00DDAD3D /* Python3.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C08A318829673E0B00DDAD3D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		C08A319D29673EA200DDAD3D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C08A319C29673EA200DDAD3D /* Python3.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C05553F5295D18CA0075E57D /* Part 1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Part 1"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C05553FE295D1AC00075E57D /* libgit2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgit2.a; path = ../../../../../../../opt/homebrew/Cellar/libgit2/1.5.0/lib/libgit2.a; sourceTree = "<group>"; };
+		C0555400295D1AE30075E57D /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		C0555403295D1B360075E57D /* libSystem.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libSystem.tbd; path = usr/lib/libSystem.tbd; sourceTree = SDKROOT; };
+		C0555405295D1B5B0075E57D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		C055541B295DEA5A0075E57D /* libvalgit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libvalgit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0555426295E1E900075E57D /* libjson-c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjson-c.a"; path = "../../../../../../../opt/homebrew/Cellar/json-c/0.16/lib/libjson-c.a"; sourceTree = "<group>"; };
+		C055542C295E817C0075E57D /* Python3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python3.framework; path = Library/Frameworks/Python3.framework; sourceTree = DEVELOPER_DIR; };
+		C055544D2961EF770075E57D /* Part 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Part 2"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C05554632964FE580075E57D /* valgit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = valgit.c; sourceTree = "<group>"; };
+		C05554642964FE580075E57D /* valgit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = valgit.h; sourceTree = "<group>"; };
+		C08A315A2966376200DDAD3D /* Part 3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Part 3"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C08A317229663E6800DDAD3D /* Part 4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Part 4"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C08A318A29673E0B00DDAD3D /* Part 5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Part 5"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C08A319E2967680700DDAD3D /* part1.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = part1.c; path = Grader/part1.c; sourceTree = "<group>"; };
+		C08A319F2967680700DDAD3D /* part5.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = part5.c; path = Grader/part5.c; sourceTree = "<group>"; };
+		C08A31A02967680700DDAD3D /* part2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = part2.c; path = Grader/part2.c; sourceTree = "<group>"; };
+		C08A31A12967680800DDAD3D /* part4.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = part4.c; path = Grader/part4.c; sourceTree = "<group>"; };
+		C08A31A22967680800DDAD3D /* part3.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = part3.c; path = Grader/part3.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C05553F2295D18CA0075E57D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C05554562961F01A0075E57D /* libgit2.a in Frameworks */,
+				C0555439295E914F0075E57D /* Python3.framework in Frameworks */,
+				C0555404295D1B360075E57D /* libSystem.tbd in Frameworks */,
+				C0555402295D1AF60075E57D /* libiconv.tbd in Frameworks */,
+				C0555406295D1B5B0075E57D /* libz.tbd in Frameworks */,
+				C0555438295E91420075E57D /* libjson-c.a in Frameworks */,
+				C055541F295DEA610075E57D /* libvalgit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0555419295DEA5A0075E57D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0555434295E90420075E57D /* Python3.framework in Frameworks */,
+				C0555436295E90750075E57D /* libSystem.tbd in Frameworks */,
+				C0555437295E90790075E57D /* libiconv.tbd in Frameworks */,
+				C0555435295E906F0075E57D /* libz.tbd in Frameworks */,
+				C0555433295E903B0075E57D /* libgit2.a in Frameworks */,
+				C0555427295E1E900075E57D /* libjson-c.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C055544A2961EF770075E57D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C05554572961F0420075E57D /* libgit2.a in Frameworks */,
+				C055545F2961F0800075E57D /* Python3.framework in Frameworks */,
+				C055545A2961F06A0075E57D /* libSystem.tbd in Frameworks */,
+				C05554582961F04B0075E57D /* libiconv.tbd in Frameworks */,
+				C055545E2961F0780075E57D /* libz.tbd in Frameworks */,
+				C05554592961F0630075E57D /* libjson-c.a in Frameworks */,
+				C055545B2961F06F0075E57D /* libvalgit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C08A31572966376200DDAD3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C08A3163296638E300DDAD3D /* libgit2.a in Frameworks */,
+				C08A316B2966392700DDAD3D /* Python3.framework in Frameworks */,
+				C08A31662966391600DDAD3D /* libSystem.tbd in Frameworks */,
+				C08A3164296638E900DDAD3D /* libiconv.tbd in Frameworks */,
+				C08A316A2966392300DDAD3D /* libz.tbd in Frameworks */,
+				C08A31652966390C00DDAD3D /* libjson-c.a in Frameworks */,
+				C08A31672966391C00DDAD3D /* libvalgit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C08A316F29663E6800DDAD3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C08A317B29663EAA00DDAD3D /* libgit2.a in Frameworks */,
+				C08A318329663EDD00DDAD3D /* Python3.framework in Frameworks */,
+				C08A317E29663ED100DDAD3D /* libSystem.tbd in Frameworks */,
+				C08A317C29663EAE00DDAD3D /* libiconv.tbd in Frameworks */,
+				C08A318229663ED700DDAD3D /* libz.tbd in Frameworks */,
+				C08A317D29663EC500DDAD3D /* libjson-c.a in Frameworks */,
+				C08A317F29663ED300DDAD3D /* libvalgit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C08A318729673E0B00DDAD3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C08A319329673E7700DDAD3D /* libgit2.a in Frameworks */,
+				C08A319B29673EA200DDAD3D /* Python3.framework in Frameworks */,
+				C08A319629673E9400DDAD3D /* libSystem.tbd in Frameworks */,
+				C08A319429673E7B00DDAD3D /* libiconv.tbd in Frameworks */,
+				C08A319A29673E9B00DDAD3D /* libz.tbd in Frameworks */,
+				C08A319529673E8C00DDAD3D /* libjson-c.a in Frameworks */,
+				C08A319729673E9700DDAD3D /* libvalgit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C05553DC295D184A0075E57D = {
+			isa = PBXGroup;
+			children = (
+				C055540F295DE9520075E57D /* valgit */,
+				C08A319E2967680700DDAD3D /* part1.c */,
+				C08A31A02967680700DDAD3D /* part2.c */,
+				C08A31A22967680800DDAD3D /* part3.c */,
+				C08A31A12967680800DDAD3D /* part4.c */,
+				C08A319F2967680700DDAD3D /* part5.c */,
+				C05553E6295D184A0075E57D /* Products */,
+				C05553FD295D1AC00075E57D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C05553E6295D184A0075E57D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C05553F5295D18CA0075E57D /* Part 1 */,
+				C055541B295DEA5A0075E57D /* libvalgit.a */,
+				C055544D2961EF770075E57D /* Part 2 */,
+				C08A315A2966376200DDAD3D /* Part 3 */,
+				C08A317229663E6800DDAD3D /* Part 4 */,
+				C08A318A29673E0B00DDAD3D /* Part 5 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C05553FD295D1AC00075E57D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C055542C295E817C0075E57D /* Python3.framework */,
+				C0555403295D1B360075E57D /* libSystem.tbd */,
+				C0555400295D1AE30075E57D /* libiconv.tbd */,
+				C0555405295D1B5B0075E57D /* libz.tbd */,
+				C05553FE295D1AC00075E57D /* libgit2.a */,
+				C0555426295E1E900075E57D /* libjson-c.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C055540F295DE9520075E57D /* valgit */ = {
+			isa = PBXGroup;
+			children = (
+				C05554642964FE580075E57D /* valgit.h */,
+				C05554632964FE580075E57D /* valgit.c */,
+			);
+			path = valgit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C0555417295DEA5A0075E57D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C05554662964FE580075E57D /* valgit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C05553F4295D18CA0075E57D /* Part 1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C05553F9295D18CA0075E57D /* Build configuration list for PBXNativeTarget "Part 1" */;
+			buildPhases = (
+				C05553F1295D18CA0075E57D /* Sources */,
+				C05553F2295D18CA0075E57D /* Frameworks */,
+				C05553F3295D18CA0075E57D /* CopyFiles */,
+				C0555432295E8ACA0075E57D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C0555421295DEA610075E57D /* PBXTargetDependency */,
+			);
+			name = "Part 1";
+			productName = "Part 1";
+			productReference = C05553F5295D18CA0075E57D /* Part 1 */;
+			productType = "com.apple.product-type.tool";
+		};
+		C055541A295DEA5A0075E57D /* valgit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C055541C295DEA5A0075E57D /* Build configuration list for PBXNativeTarget "valgit" */;
+			buildPhases = (
+				C0555417295DEA5A0075E57D /* Headers */,
+				C0555418295DEA5A0075E57D /* Sources */,
+				C0555419295DEA5A0075E57D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = valgit;
+			productName = valgit;
+			productReference = C055541B295DEA5A0075E57D /* libvalgit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C055544C2961EF770075E57D /* Part 2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C05554512961EF770075E57D /* Build configuration list for PBXNativeTarget "Part 2" */;
+			buildPhases = (
+				C05554492961EF770075E57D /* Sources */,
+				C055544A2961EF770075E57D /* Frameworks */,
+				C055544B2961EF770075E57D /* CopyFiles */,
+				C05554612961F0800075E57D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C055545D2961F06F0075E57D /* PBXTargetDependency */,
+			);
+			name = "Part 2";
+			productName = "Part 2";
+			productReference = C055544D2961EF770075E57D /* Part 2 */;
+			productType = "com.apple.product-type.tool";
+		};
+		C08A31592966376200DDAD3D /* Part 3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C08A31602966376200DDAD3D /* Build configuration list for PBXNativeTarget "Part 3" */;
+			buildPhases = (
+				C08A31562966376200DDAD3D /* Sources */,
+				C08A31572966376200DDAD3D /* Frameworks */,
+				C08A31582966376200DDAD3D /* CopyFiles */,
+				C08A316D2966392700DDAD3D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C08A31692966391C00DDAD3D /* PBXTargetDependency */,
+			);
+			name = "Part 3";
+			productName = "Part 3";
+			productReference = C08A315A2966376200DDAD3D /* Part 3 */;
+			productType = "com.apple.product-type.tool";
+		};
+		C08A317129663E6800DDAD3D /* Part 4 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C08A317629663E6800DDAD3D /* Build configuration list for PBXNativeTarget "Part 4" */;
+			buildPhases = (
+				C08A316E29663E6800DDAD3D /* Sources */,
+				C08A316F29663E6800DDAD3D /* Frameworks */,
+				C08A317029663E6800DDAD3D /* CopyFiles */,
+				C08A318529663EDD00DDAD3D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C08A318129663ED300DDAD3D /* PBXTargetDependency */,
+			);
+			name = "Part 4";
+			productName = "Part 4";
+			productReference = C08A317229663E6800DDAD3D /* Part 4 */;
+			productType = "com.apple.product-type.tool";
+		};
+		C08A318929673E0B00DDAD3D /* Part 5 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C08A318E29673E0B00DDAD3D /* Build configuration list for PBXNativeTarget "Part 5" */;
+			buildPhases = (
+				C08A318629673E0B00DDAD3D /* Sources */,
+				C08A318729673E0B00DDAD3D /* Frameworks */,
+				C08A318829673E0B00DDAD3D /* CopyFiles */,
+				C08A319D29673EA200DDAD3D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C08A319929673E9700DDAD3D /* PBXTargetDependency */,
+			);
+			name = "Part 5";
+			productName = "Part 5";
+			productReference = C08A318A29673E0B00DDAD3D /* Part 5 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C05553DD295D184A0075E57D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					C05553F4295D18CA0075E57D = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					C055541A295DEA5A0075E57D = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					C055544C2961EF770075E57D = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					C08A31592966376200DDAD3D = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					C08A317129663E6800DDAD3D = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					C08A318929673E0B00DDAD3D = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = C05553E0295D184A0075E57D /* Build configuration list for PBXProject "Validation" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C05553DC295D184A0075E57D;
+			productRefGroup = C05553E6295D184A0075E57D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C05553F4295D18CA0075E57D /* Part 1 */,
+				C055544C2961EF770075E57D /* Part 2 */,
+				C08A31592966376200DDAD3D /* Part 3 */,
+				C08A317129663E6800DDAD3D /* Part 4 */,
+				C08A318929673E0B00DDAD3D /* Part 5 */,
+				C055541A295DEA5A0075E57D /* valgit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C05553F1295D18CA0075E57D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C08A31A32967681700DDAD3D /* part1.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0555418295DEA5A0075E57D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C05554652964FE580075E57D /* valgit.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C05554492961EF770075E57D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C08A31A42967681B00DDAD3D /* part2.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C08A31562966376200DDAD3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C08A31A52967682200DDAD3D /* part3.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C08A316E29663E6800DDAD3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C08A31A62967682500DDAD3D /* part4.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C08A318629673E0B00DDAD3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C08A31A72967682900DDAD3D /* part5.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C0555421295DEA610075E57D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C055541A295DEA5A0075E57D /* valgit */;
+			targetProxy = C0555420295DEA610075E57D /* PBXContainerItemProxy */;
+		};
+		C055545D2961F06F0075E57D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C055541A295DEA5A0075E57D /* valgit */;
+			targetProxy = C055545C2961F06F0075E57D /* PBXContainerItemProxy */;
+		};
+		C08A31692966391C00DDAD3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C055541A295DEA5A0075E57D /* valgit */;
+			targetProxy = C08A31682966391C00DDAD3D /* PBXContainerItemProxy */;
+		};
+		C08A318129663ED300DDAD3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C055541A295DEA5A0075E57D /* valgit */;
+			targetProxy = C08A318029663ED300DDAD3D /* PBXContainerItemProxy */;
+		};
+		C08A319929673E9700DDAD3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C055541A295DEA5A0075E57D /* valgit */;
+			targetProxy = C08A319829673E9700DDAD3D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C05553EA295D184A0075E57D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Library/Frameworks;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/opt/homebrew/include/,
+					/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Headers,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/opt/homebrew/Cellar/libgit2/1.5.0/lib,
+					"/opt/homebrew/Cellar/json-c/0.16/lib",
+					/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C05553EB295D184A0075E57D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Library/Frameworks;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/opt/homebrew/include/,
+					/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Headers,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/opt/homebrew/Cellar/libgit2/1.5.0/lib,
+					"/opt/homebrew/Cellar/json-c/0.16/lib",
+					/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C05553FA295D18CA0075E57D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C05553FB295D18CA0075E57D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C055541D295DEA5A0075E57D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C055541E295DEA5A0075E57D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C05554522961EF770075E57D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C05554532961EF770075E57D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C08A315E2966376200DDAD3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C08A315F2966376200DDAD3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C08A317729663E6800DDAD3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C08A317829663E6800DDAD3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C08A318F29673E0B00DDAD3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C08A319029673E0B00DDAD3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C05553E0295D184A0075E57D /* Build configuration list for PBXProject "Validation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05553EA295D184A0075E57D /* Debug */,
+				C05553EB295D184A0075E57D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C05553F9295D18CA0075E57D /* Build configuration list for PBXNativeTarget "Part 1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05553FA295D18CA0075E57D /* Debug */,
+				C05553FB295D18CA0075E57D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C055541C295DEA5A0075E57D /* Build configuration list for PBXNativeTarget "valgit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C055541D295DEA5A0075E57D /* Debug */,
+				C055541E295DEA5A0075E57D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C05554512961EF770075E57D /* Build configuration list for PBXNativeTarget "Part 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05554522961EF770075E57D /* Debug */,
+				C05554532961EF770075E57D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C08A31602966376200DDAD3D /* Build configuration list for PBXNativeTarget "Part 3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C08A315E2966376200DDAD3D /* Debug */,
+				C08A315F2966376200DDAD3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C08A317629663E6800DDAD3D /* Build configuration list for PBXNativeTarget "Part 4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C08A317729663E6800DDAD3D /* Debug */,
+				C08A317829663E6800DDAD3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C08A318E29673E0B00DDAD3D /* Build configuration list for PBXNativeTarget "Part 5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C08A318F29673E0B00DDAD3D /* Debug */,
+				C08A319029673E0B00DDAD3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C05553DD295D184A0075E57D /* Project object */;
+}
