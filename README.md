@@ -10,7 +10,7 @@ The source code for the automatic grader is located in the `Grader` directory at
 You must generate an ED25519 key-pair in the `Keys` directory at the root of the repository. As the instructor, distribute the public key (`Keys/id_ed25519.pub`) to your students. Do _not_ distribute the private key to anyone. You will, however, need to include both the public key and the private key in the auto-grading configuration that you upload to Submitty.
 
 ### Key Generation
-From the root of the repository, run `ssh-keygen -t ed25519`. When prompted, specify `Keys/id_ed25519` as the path. Leave the passphrase empty.
+If a `Keys` directory at the root of the repository doesn’t yet exist, then create it. Then, from the root of the repository, run `ssh-keygen -t ed25519`. When prompted, specify `Keys/id_ed25519` as the path. Leave the passphrase empty.
 
 ## Deployment
 To deploy to Submitty, zip the contents of the `Auto-Grading Configuration` directory (but _not_ the directory itself) and upload the zip archive to Submitty. Make sure to select “Students will submit one or more files by direct upload to the Submitty website” for “Gradeable Type” on Submitty.
