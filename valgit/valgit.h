@@ -45,10 +45,27 @@
 #define clear_all() e_ret = 0; e_str = NULL; ptrs_clear(); ptrs_git_clear(); ptrs_json_clear(); ptrs_python_clear()
 
 enum val_status_t {
-	failure,
-	information,
-	success,
-	warning
+	VAL_STATUS_FAILURE,
+	VAL_STATUS_INFORMATION,
+	VAL_STATUS_SUCCESS,
+	VAL_STATUS_WARNING
+};
+
+enum val_input_key_t {
+	VAL_INPUT_KEY_PREFIX,
+	VAL_INPUT_KEY_RCSID
+};
+
+enum val_git_clone_error_t {
+	VAL_GIT_CLONE_ERROR_NONE,
+	VAL_GIT_CLONE_ERROR_NORCSID,
+	VAL_GIT_CLONE_ERROR_NOPUBLICKEY,
+	VAL_GIT_CLONE_ERROR_NOPRIVATEKEY
+};
+
+struct val_git_clone_payload_t {
+	bool halt;
+	enum val_git_clone_error_t error;
 };
 
 struct val_message_t {
@@ -111,9 +128,9 @@ json_object* json_create_val_failure(struct val_message_t message);
 
 char* val_python_result(const char* eval, const char* filename, bool* eval_failed);
 
-git_repository* val_git_clone(const char* url, bool* access_public);
+int val_git_clone(const char* url, bool* access_public, git_repository** repository_out);
 
-char* val_prefix(void);
+char* val_input(enum val_input_key_t input_key);
 
 FILE* val_url_file(void);
 

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C08A318929673E0B00DDAD3D"
-               BuildableName = "Part 5"
-               BlueprintName = "Part 5"
+               BlueprintIdentifier = "C05553F4295D18CA0075E57D"
+               BuildableName = "Grader"
+               BlueprintName = "Grader"
                ReferencedContainer = "container:Validation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,16 +45,12 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       viewDebuggingEnabled = "No">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C08A318929673E0B00DDAD3D"
-            BuildableName = "Part 5"
-            BlueprintName = "Part 5"
-            ReferencedContainer = "container:Validation.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "part5"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
          <AdditionalOption
             key = "NSZombieEnabled"
@@ -74,16 +70,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C08A318929673E0B00DDAD3D"
-            BuildableName = "Part 5"
-            BlueprintName = "Part 5"
-            ReferencedContainer = "container:Validation.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

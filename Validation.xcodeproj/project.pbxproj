@@ -21,77 +21,18 @@
 		C0555438295E91420075E57D /* libjson-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555426295E1E900075E57D /* libjson-c.a */; };
 		C0555439295E914F0075E57D /* Python3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; };
 		C05554562961F01A0075E57D /* libgit2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05553FE295D1AC00075E57D /* libgit2.a */; };
-		C05554572961F0420075E57D /* libgit2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05553FE295D1AC00075E57D /* libgit2.a */; };
-		C05554582961F04B0075E57D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555400295D1AE30075E57D /* libiconv.tbd */; };
-		C05554592961F0630075E57D /* libjson-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555426295E1E900075E57D /* libjson-c.a */; };
-		C055545A2961F06A0075E57D /* libSystem.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555403295D1B360075E57D /* libSystem.tbd */; };
-		C055545B2961F06F0075E57D /* libvalgit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C055541B295DEA5A0075E57D /* libvalgit.a */; };
-		C055545E2961F0780075E57D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555405295D1B5B0075E57D /* libz.tbd */; };
-		C055545F2961F0800075E57D /* Python3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; };
-		C05554602961F0800075E57D /* Python3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C05554652964FE580075E57D /* valgit.c in Sources */ = {isa = PBXBuildFile; fileRef = C05554632964FE580075E57D /* valgit.c */; };
 		C05554662964FE580075E57D /* valgit.h in Headers */ = {isa = PBXBuildFile; fileRef = C05554642964FE580075E57D /* valgit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C08A3163296638E300DDAD3D /* libgit2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05553FE295D1AC00075E57D /* libgit2.a */; };
-		C08A3164296638E900DDAD3D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555400295D1AE30075E57D /* libiconv.tbd */; };
-		C08A31652966390C00DDAD3D /* libjson-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555426295E1E900075E57D /* libjson-c.a */; };
-		C08A31662966391600DDAD3D /* libSystem.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555403295D1B360075E57D /* libSystem.tbd */; };
-		C08A31672966391C00DDAD3D /* libvalgit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C055541B295DEA5A0075E57D /* libvalgit.a */; };
-		C08A316A2966392300DDAD3D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555405295D1B5B0075E57D /* libz.tbd */; };
-		C08A316B2966392700DDAD3D /* Python3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; };
-		C08A316C2966392700DDAD3D /* Python3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C08A317B29663EAA00DDAD3D /* libgit2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05553FE295D1AC00075E57D /* libgit2.a */; };
-		C08A317C29663EAE00DDAD3D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555400295D1AE30075E57D /* libiconv.tbd */; };
-		C08A317D29663EC500DDAD3D /* libjson-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555426295E1E900075E57D /* libjson-c.a */; };
-		C08A317E29663ED100DDAD3D /* libSystem.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555403295D1B360075E57D /* libSystem.tbd */; };
-		C08A317F29663ED300DDAD3D /* libvalgit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C055541B295DEA5A0075E57D /* libvalgit.a */; };
-		C08A318229663ED700DDAD3D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555405295D1B5B0075E57D /* libz.tbd */; };
-		C08A318329663EDD00DDAD3D /* Python3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; };
-		C08A318429663EDD00DDAD3D /* Python3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C08A319329673E7700DDAD3D /* libgit2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05553FE295D1AC00075E57D /* libgit2.a */; };
-		C08A319429673E7B00DDAD3D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555400295D1AE30075E57D /* libiconv.tbd */; };
-		C08A319529673E8C00DDAD3D /* libjson-c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555426295E1E900075E57D /* libjson-c.a */; };
-		C08A319629673E9400DDAD3D /* libSystem.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555403295D1B360075E57D /* libSystem.tbd */; };
-		C08A319729673E9700DDAD3D /* libvalgit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C055541B295DEA5A0075E57D /* libvalgit.a */; };
-		C08A319A29673E9B00DDAD3D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0555405295D1B5B0075E57D /* libz.tbd */; };
-		C08A319B29673EA200DDAD3D /* Python3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; };
-		C08A319C29673EA200DDAD3D /* Python3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C055542C295E817C0075E57D /* Python3.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C08A31A32967681700DDAD3D /* part1.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A319E2967680700DDAD3D /* part1.c */; };
-		C08A31A42967681B00DDAD3D /* part2.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A31A02967680700DDAD3D /* part2.c */; };
-		C08A31A52967682200DDAD3D /* part3.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A31A22967680800DDAD3D /* part3.c */; };
-		C08A31A62967682500DDAD3D /* part4.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A31A12967680800DDAD3D /* part4.c */; };
-		C08A31A72967682900DDAD3D /* part5.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A319F2967680700DDAD3D /* part5.c */; };
+		C08A31AC296BB07500DDAD3D /* part2.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A31A02967680700DDAD3D /* part2.c */; };
+		C08A31AD296BB08700DDAD3D /* part3.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A31A22967680800DDAD3D /* part3.c */; };
+		C08A31AE296BB09300DDAD3D /* part4.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A31A12967680800DDAD3D /* part4.c */; };
+		C08A31AF296BB0AB00DDAD3D /* part5.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A319F2967680700DDAD3D /* part5.c */; };
+		C08A31B2296BB10F00DDAD3D /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C08A31B1296BB10F00DDAD3D /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		C0555420295DEA610075E57D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C05553DD295D184A0075E57D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C055541A295DEA5A0075E57D;
-			remoteInfo = valgit;
-		};
-		C055545C2961F06F0075E57D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C05553DD295D184A0075E57D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C055541A295DEA5A0075E57D;
-			remoteInfo = valgit;
-		};
-		C08A31682966391C00DDAD3D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C05553DD295D184A0075E57D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C055541A295DEA5A0075E57D;
-			remoteInfo = valgit;
-		};
-		C08A318029663ED300DDAD3D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C05553DD295D184A0075E57D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C055541A295DEA5A0075E57D;
-			remoteInfo = valgit;
-		};
-		C08A319829673E9700DDAD3D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C05553DD295D184A0075E57D /* Project object */;
 			proxyType = 1;
@@ -121,90 +62,10 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C055544B2961EF770075E57D /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-		C05554612961F0800075E57D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C05554602961F0800075E57D /* Python3.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C08A31582966376200DDAD3D /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-		C08A316D2966392700DDAD3D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C08A316C2966392700DDAD3D /* Python3.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C08A317029663E6800DDAD3D /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-		C08A318529663EDD00DDAD3D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C08A318429663EDD00DDAD3D /* Python3.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C08A318829673E0B00DDAD3D /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-		C08A319D29673EA200DDAD3D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C08A319C29673EA200DDAD3D /* Python3.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C05553F5295D18CA0075E57D /* Part 1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Part 1"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C05553F5295D18CA0075E57D /* Grader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Grader; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05553FE295D1AC00075E57D /* libgit2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgit2.a; path = ../../../../../../../opt/homebrew/Cellar/libgit2/1.5.0/lib/libgit2.a; sourceTree = "<group>"; };
 		C0555400295D1AE30075E57D /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		C0555403295D1B360075E57D /* libSystem.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libSystem.tbd; path = usr/lib/libSystem.tbd; sourceTree = SDKROOT; };
@@ -212,17 +73,15 @@
 		C055541B295DEA5A0075E57D /* libvalgit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libvalgit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0555426295E1E900075E57D /* libjson-c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjson-c.a"; path = "../../../../../../../opt/homebrew/Cellar/json-c/0.16/lib/libjson-c.a"; sourceTree = "<group>"; };
 		C055542C295E817C0075E57D /* Python3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python3.framework; path = Library/Frameworks/Python3.framework; sourceTree = DEVELOPER_DIR; };
-		C055544D2961EF770075E57D /* Part 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Part 2"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05554632964FE580075E57D /* valgit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = valgit.c; sourceTree = "<group>"; };
 		C05554642964FE580075E57D /* valgit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = valgit.h; sourceTree = "<group>"; };
-		C08A315A2966376200DDAD3D /* Part 3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Part 3"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C08A317229663E6800DDAD3D /* Part 4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Part 4"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C08A318A29673E0B00DDAD3D /* Part 5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Part 5"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08A319E2967680700DDAD3D /* part1.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = part1.c; path = Grader/part1.c; sourceTree = "<group>"; };
 		C08A319F2967680700DDAD3D /* part5.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = part5.c; path = Grader/part5.c; sourceTree = "<group>"; };
 		C08A31A02967680700DDAD3D /* part2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = part2.c; path = Grader/part2.c; sourceTree = "<group>"; };
 		C08A31A12967680800DDAD3D /* part4.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = part4.c; path = Grader/part4.c; sourceTree = "<group>"; };
 		C08A31A22967680800DDAD3D /* part3.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = part3.c; path = Grader/part3.c; sourceTree = "<group>"; };
+		C08A31B0296BB10300DDAD3D /* parts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = parts.h; path = Grader/parts.h; sourceTree = "<group>"; };
+		C08A31B1296BB10F00DDAD3D /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = Grader/main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,62 +112,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C055544A2961EF770075E57D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C05554572961F0420075E57D /* libgit2.a in Frameworks */,
-				C055545F2961F0800075E57D /* Python3.framework in Frameworks */,
-				C055545A2961F06A0075E57D /* libSystem.tbd in Frameworks */,
-				C05554582961F04B0075E57D /* libiconv.tbd in Frameworks */,
-				C055545E2961F0780075E57D /* libz.tbd in Frameworks */,
-				C05554592961F0630075E57D /* libjson-c.a in Frameworks */,
-				C055545B2961F06F0075E57D /* libvalgit.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C08A31572966376200DDAD3D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C08A3163296638E300DDAD3D /* libgit2.a in Frameworks */,
-				C08A316B2966392700DDAD3D /* Python3.framework in Frameworks */,
-				C08A31662966391600DDAD3D /* libSystem.tbd in Frameworks */,
-				C08A3164296638E900DDAD3D /* libiconv.tbd in Frameworks */,
-				C08A316A2966392300DDAD3D /* libz.tbd in Frameworks */,
-				C08A31652966390C00DDAD3D /* libjson-c.a in Frameworks */,
-				C08A31672966391C00DDAD3D /* libvalgit.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C08A316F29663E6800DDAD3D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C08A317B29663EAA00DDAD3D /* libgit2.a in Frameworks */,
-				C08A318329663EDD00DDAD3D /* Python3.framework in Frameworks */,
-				C08A317E29663ED100DDAD3D /* libSystem.tbd in Frameworks */,
-				C08A317C29663EAE00DDAD3D /* libiconv.tbd in Frameworks */,
-				C08A318229663ED700DDAD3D /* libz.tbd in Frameworks */,
-				C08A317D29663EC500DDAD3D /* libjson-c.a in Frameworks */,
-				C08A317F29663ED300DDAD3D /* libvalgit.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C08A318729673E0B00DDAD3D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C08A319329673E7700DDAD3D /* libgit2.a in Frameworks */,
-				C08A319B29673EA200DDAD3D /* Python3.framework in Frameworks */,
-				C08A319629673E9400DDAD3D /* libSystem.tbd in Frameworks */,
-				C08A319429673E7B00DDAD3D /* libiconv.tbd in Frameworks */,
-				C08A319A29673E9B00DDAD3D /* libz.tbd in Frameworks */,
-				C08A319529673E8C00DDAD3D /* libjson-c.a in Frameworks */,
-				C08A319729673E9700DDAD3D /* libvalgit.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -316,11 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				C055540F295DE9520075E57D /* valgit */,
-				C08A319E2967680700DDAD3D /* part1.c */,
-				C08A31A02967680700DDAD3D /* part2.c */,
-				C08A31A22967680800DDAD3D /* part3.c */,
-				C08A31A12967680800DDAD3D /* part4.c */,
-				C08A319F2967680700DDAD3D /* part5.c */,
+				C08A31AB296BA20C00DDAD3D /* parts */,
+				C08A31B1296BB10F00DDAD3D /* main.c */,
 				C05553E6295D184A0075E57D /* Products */,
 				C05553FD295D1AC00075E57D /* Frameworks */,
 			);
@@ -329,12 +129,8 @@
 		C05553E6295D184A0075E57D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C05553F5295D18CA0075E57D /* Part 1 */,
+				C05553F5295D18CA0075E57D /* Grader */,
 				C055541B295DEA5A0075E57D /* libvalgit.a */,
-				C055544D2961EF770075E57D /* Part 2 */,
-				C08A315A2966376200DDAD3D /* Part 3 */,
-				C08A317229663E6800DDAD3D /* Part 4 */,
-				C08A318A29673E0B00DDAD3D /* Part 5 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -361,6 +157,19 @@
 			path = valgit;
 			sourceTree = "<group>";
 		};
+		C08A31AB296BA20C00DDAD3D /* parts */ = {
+			isa = PBXGroup;
+			children = (
+				C08A31B0296BB10300DDAD3D /* parts.h */,
+				C08A319E2967680700DDAD3D /* part1.c */,
+				C08A31A02967680700DDAD3D /* part2.c */,
+				C08A31A22967680800DDAD3D /* part3.c */,
+				C08A31A12967680800DDAD3D /* part4.c */,
+				C08A319F2967680700DDAD3D /* part5.c */,
+			);
+			name = parts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -375,9 +184,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C05553F4295D18CA0075E57D /* Part 1 */ = {
+		C05553F4295D18CA0075E57D /* Grader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C05553F9295D18CA0075E57D /* Build configuration list for PBXNativeTarget "Part 1" */;
+			buildConfigurationList = C05553F9295D18CA0075E57D /* Build configuration list for PBXNativeTarget "Grader" */;
 			buildPhases = (
 				C05553F1295D18CA0075E57D /* Sources */,
 				C05553F2295D18CA0075E57D /* Frameworks */,
@@ -389,9 +198,9 @@
 			dependencies = (
 				C0555421295DEA610075E57D /* PBXTargetDependency */,
 			);
-			name = "Part 1";
+			name = Grader;
 			productName = "Part 1";
-			productReference = C05553F5295D18CA0075E57D /* Part 1 */;
+			productReference = C05553F5295D18CA0075E57D /* Grader */;
 			productType = "com.apple.product-type.tool";
 		};
 		C055541A295DEA5A0075E57D /* valgit */ = {
@@ -411,82 +220,6 @@
 			productReference = C055541B295DEA5A0075E57D /* libvalgit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		C055544C2961EF770075E57D /* Part 2 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C05554512961EF770075E57D /* Build configuration list for PBXNativeTarget "Part 2" */;
-			buildPhases = (
-				C05554492961EF770075E57D /* Sources */,
-				C055544A2961EF770075E57D /* Frameworks */,
-				C055544B2961EF770075E57D /* CopyFiles */,
-				C05554612961F0800075E57D /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C055545D2961F06F0075E57D /* PBXTargetDependency */,
-			);
-			name = "Part 2";
-			productName = "Part 2";
-			productReference = C055544D2961EF770075E57D /* Part 2 */;
-			productType = "com.apple.product-type.tool";
-		};
-		C08A31592966376200DDAD3D /* Part 3 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C08A31602966376200DDAD3D /* Build configuration list for PBXNativeTarget "Part 3" */;
-			buildPhases = (
-				C08A31562966376200DDAD3D /* Sources */,
-				C08A31572966376200DDAD3D /* Frameworks */,
-				C08A31582966376200DDAD3D /* CopyFiles */,
-				C08A316D2966392700DDAD3D /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C08A31692966391C00DDAD3D /* PBXTargetDependency */,
-			);
-			name = "Part 3";
-			productName = "Part 3";
-			productReference = C08A315A2966376200DDAD3D /* Part 3 */;
-			productType = "com.apple.product-type.tool";
-		};
-		C08A317129663E6800DDAD3D /* Part 4 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C08A317629663E6800DDAD3D /* Build configuration list for PBXNativeTarget "Part 4" */;
-			buildPhases = (
-				C08A316E29663E6800DDAD3D /* Sources */,
-				C08A316F29663E6800DDAD3D /* Frameworks */,
-				C08A317029663E6800DDAD3D /* CopyFiles */,
-				C08A318529663EDD00DDAD3D /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C08A318129663ED300DDAD3D /* PBXTargetDependency */,
-			);
-			name = "Part 4";
-			productName = "Part 4";
-			productReference = C08A317229663E6800DDAD3D /* Part 4 */;
-			productType = "com.apple.product-type.tool";
-		};
-		C08A318929673E0B00DDAD3D /* Part 5 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C08A318E29673E0B00DDAD3D /* Build configuration list for PBXNativeTarget "Part 5" */;
-			buildPhases = (
-				C08A318629673E0B00DDAD3D /* Sources */,
-				C08A318729673E0B00DDAD3D /* Frameworks */,
-				C08A318829673E0B00DDAD3D /* CopyFiles */,
-				C08A319D29673EA200DDAD3D /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C08A319929673E9700DDAD3D /* PBXTargetDependency */,
-			);
-			name = "Part 5";
-			productName = "Part 5";
-			productReference = C08A318A29673E0B00DDAD3D /* Part 5 */;
-			productType = "com.apple.product-type.tool";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -500,18 +233,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					C055541A295DEA5A0075E57D = {
-						CreatedOnToolsVersion = 14.2;
-					};
-					C055544C2961EF770075E57D = {
-						CreatedOnToolsVersion = 14.2;
-					};
-					C08A31592966376200DDAD3D = {
-						CreatedOnToolsVersion = 14.2;
-					};
-					C08A317129663E6800DDAD3D = {
-						CreatedOnToolsVersion = 14.2;
-					};
-					C08A318929673E0B00DDAD3D = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -529,11 +250,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C05553F4295D18CA0075E57D /* Part 1 */,
-				C055544C2961EF770075E57D /* Part 2 */,
-				C08A31592966376200DDAD3D /* Part 3 */,
-				C08A317129663E6800DDAD3D /* Part 4 */,
-				C08A318929673E0B00DDAD3D /* Part 5 */,
+				C05553F4295D18CA0075E57D /* Grader */,
 				C055541A295DEA5A0075E57D /* valgit */,
 			);
 		};
@@ -544,6 +261,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C08A31AF296BB0AB00DDAD3D /* part5.c in Sources */,
+				C08A31AC296BB07500DDAD3D /* part2.c in Sources */,
+				C08A31B2296BB10F00DDAD3D /* main.c in Sources */,
+				C08A31AE296BB09300DDAD3D /* part4.c in Sources */,
+				C08A31AD296BB08700DDAD3D /* part3.c in Sources */,
 				C08A31A32967681700DDAD3D /* part1.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,38 +278,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C05554492961EF770075E57D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C08A31A42967681B00DDAD3D /* part2.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C08A31562966376200DDAD3D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C08A31A52967682200DDAD3D /* part3.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C08A316E29663E6800DDAD3D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C08A31A62967682500DDAD3D /* part4.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C08A318629673E0B00DDAD3D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C08A31A72967682900DDAD3D /* part5.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -595,26 +285,6 @@
 			isa = PBXTargetDependency;
 			target = C055541A295DEA5A0075E57D /* valgit */;
 			targetProxy = C0555420295DEA610075E57D /* PBXContainerItemProxy */;
-		};
-		C055545D2961F06F0075E57D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C055541A295DEA5A0075E57D /* valgit */;
-			targetProxy = C055545C2961F06F0075E57D /* PBXContainerItemProxy */;
-		};
-		C08A31692966391C00DDAD3D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C055541A295DEA5A0075E57D /* valgit */;
-			targetProxy = C08A31682966391C00DDAD3D /* PBXContainerItemProxy */;
-		};
-		C08A318129663ED300DDAD3D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C055541A295DEA5A0075E57D /* valgit */;
-			targetProxy = C08A318029663ED300DDAD3D /* PBXContainerItemProxy */;
-		};
-		C08A319929673E9700DDAD3D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C055541A295DEA5A0075E57D /* valgit */;
-			targetProxy = C08A319829673E9700DDAD3D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -782,70 +452,6 @@
 			};
 			name = Release;
 		};
-		C05554522961EF770075E57D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		C05554532961EF770075E57D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		C08A315E2966376200DDAD3D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		C08A315F2966376200DDAD3D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		C08A317729663E6800DDAD3D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		C08A317829663E6800DDAD3D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		C08A318F29673E0B00DDAD3D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		C08A319029673E0B00DDAD3D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -858,7 +464,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C05553F9295D18CA0075E57D /* Build configuration list for PBXNativeTarget "Part 1" */ = {
+		C05553F9295D18CA0075E57D /* Build configuration list for PBXNativeTarget "Grader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C05553FA295D18CA0075E57D /* Debug */,
@@ -872,42 +478,6 @@
 			buildConfigurations = (
 				C055541D295DEA5A0075E57D /* Debug */,
 				C055541E295DEA5A0075E57D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C05554512961EF770075E57D /* Build configuration list for PBXNativeTarget "Part 2" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C05554522961EF770075E57D /* Debug */,
-				C05554532961EF770075E57D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C08A31602966376200DDAD3D /* Build configuration list for PBXNativeTarget "Part 3" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C08A315E2966376200DDAD3D /* Debug */,
-				C08A315F2966376200DDAD3D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C08A317629663E6800DDAD3D /* Build configuration list for PBXNativeTarget "Part 4" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C08A317729663E6800DDAD3D /* Debug */,
-				C08A317829663E6800DDAD3D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C08A318E29673E0B00DDAD3D /* Build configuration list for PBXNativeTarget "Part 5" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C08A318F29673E0B00DDAD3D /* Debug */,
-				C08A319029673E0B00DDAD3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

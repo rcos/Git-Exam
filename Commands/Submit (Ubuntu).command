@@ -147,19 +147,19 @@ done
 
 echo "Step 2:	Building…"
 cd "$INSTALL_PREFIX"/Grader/
+rm valgit.*
+cp "$INSTALL_PREFIX"/valgit/* ./
 mkdir -p "$INSTALL_PREFIX"/Build/Linux/"$(arch)"
-clang -g -static -D_XOPEN_SOURCE=500 -I$include_python part1.c stubs.c valgit.c $frameworks -o "$INSTALL_PREFIX"/Build/Linux/"$(arch)"/part1
-clang -g -static -D_XOPEN_SOURCE=500 -I$include_python part2.c stubs.c valgit.c $frameworks -o "$INSTALL_PREFIX"/Build/Linux/"$(arch)"/part2
-clang -g -static -D_XOPEN_SOURCE=500 -I$include_python part3.c stubs.c valgit.c $frameworks -o "$INSTALL_PREFIX"/Build/Linux/"$(arch)"/part3
-clang -g -static -D_XOPEN_SOURCE=500 -I$include_python part4.c stubs.c valgit.c $frameworks -o "$INSTALL_PREFIX"/Build/Linux/"$(arch)"/part4
-clang -g -static -D_XOPEN_SOURCE=500 -I$include_python part5.c stubs.c valgit.c $frameworks -o "$INSTALL_PREFIX"/Build/Linux/"$(arch)"/part5
+clang -g -static -D_XOPEN_SOURCE=500 -I$include_python main.c part1.c part2.c part3.c part4.c part5.c stubs.c valgit.c $frameworks -o "$INSTALL_PREFIX"/Build/Linux/"$(arch)"/grade
+rm valgit.h valgit.c
+ln -s "$INSTALL_PREFIX"/valgit/* ./
 
 echo "Step 3:	Finishing…"
 cd "$INSTALL_PREFIX"/Submission
 mkdir "$SUBMISSION_PREFIX"
-ln -s "$INSTALL_PREFIX"/Build/Linux/"$(arch)"/* ./
+ln -s "$INSTALL_PREFIX"/Build/Linux/"$(arch)"/grade ./
 ln -s "$INSTALL_PREFIX"/Keys/* ./
-echo "{\"testcase_prefix\": \"$SUBMISSION_PREFIX/\"}" > custom_validator_input.json
-echo "$1" > URL.txt
+echo "{\"testcase_prefix\":\"$SUBMISSION_PREFIX/\",\"username\":\"$1\"}" > custom_validator_input.json
+echo "$2" > URL.txt
 
 echo "Done!"

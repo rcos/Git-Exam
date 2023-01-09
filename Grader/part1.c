@@ -1,6 +1,6 @@
 //
 //  part1.c
-//  Part 1
+//  Grader
 //
 //  Created by Gabriel Jacoby-Cooper on 12/28/22.
 //
@@ -8,75 +8,15 @@
 #include <sys/param.h>
 
 #include "valgit.h"
+#include "parts.h"
 
 #define FILE_STUDENT "Code.py"
 #define COMMIT_MESSAGE_PREFIX "[Part 1]"
 
-#define end() free_all(); git_libgit2_shutdown(); return EXIT_SUCCESS
-
-int main(void) {
-	int ret;
+int part1(git_repository* repository) {
 	e_init();
-	e_git(git_libgit2_init());
-	
-	// Read the repository URL
-	FILE* fp = val_url_file();
-	if (!fp) {
-		fprintf(stderr, "Failed to open URL file\n");
-		e_force();
-	}
-	char* url = val_file_str(fp);
-	fclose(fp);
-	if (!url) {
-		fprintf(stderr, "Failed to read URL file\n");
-		e_force();
-	}
-	
-	// Clone the repository
-	bool access_public;
-	git_repository* repository = val_git_clone(url, &access_public);
-	free(url);
-	if (!repository) {
-		if (access_public) {
-			const unsigned short messagesc = 2;
-			struct val_message_t messagesv[2] = {
-				{
-					failure,
-					"Your Git repository is publicly accessible."
-				},
-				{
-					warning,
-					"This is a violation of academic integrity. Please make your repository private and configure the deploy key."
-				}
-			};
-			json_object* json = json_create_val_success(0, messagesv, messagesc);
-			if (!json) {
-				e_json_force();
-			}
-			e_json(json_object_to_file(FILE_RESULTS, json));
-			end();
-		} else {
-			val_error_message_git(-1);
-			const unsigned short messagesc = 2;
-			struct val_message_t messagesv[2] = {
-				{
-					failure,
-					"Your Git repository couldn’t be cloned."
-				},
-				{
-					warning,
-					"Check that you submitted the correct SSH clone URL and that you properly configured the deploy key."
-				}
-			};
-			json_object* json = json_create_val_success(0, messagesv, messagesc);
-			if (!json) {
-				e_json_force();
-			}
-			e_json(json_object_to_file(FILE_RESULTS, json));
-			end();
-		}
-	}
 	ptrs_git_repository_set(repository);
+	int ret;
 	
 	// Get a reference to the latest commit in the “main” branch
 	git_reference* reference;
@@ -85,11 +25,11 @@ int main(void) {
 		const unsigned short messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
-				failure,
+				VAL_STATUS_FAILURE,
 				"Your Git repository doesn’t have a “main” branch."
 			},
 			{
-				warning,
+				VAL_STATUS_WARNING,
 				"Note that the branch should be named “main”, not “master”."
 			}
 		};
@@ -114,7 +54,7 @@ int main(void) {
 		const unsigned short messagesc = 1;
 		struct val_message_t messagesv[1] = {
 			{
-				failure,
+				VAL_STATUS_FAILURE,
 				"The expected commit couldn’t be found."
 			}
 		};
@@ -131,11 +71,11 @@ int main(void) {
 		const unsigned short messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
-				failure,
+				VAL_STATUS_FAILURE,
 				"The expected commit couldn’t be found."
 			},
 			{
-				warning,
+				VAL_STATUS_WARNING,
 				"You must add a commit with the relevant changes."
 			}
 		};
@@ -186,19 +126,19 @@ int main(void) {
 			const unsigned short messagesc = 4;
 			struct val_message_t messagesv[4] = {
 				{
-					success,
+					VAL_STATUS_SUCCESS,
 					"Your commit structure is correct!"
 				},
 				{
-					success,
+					VAL_STATUS_SUCCESS,
 					"Your commit message is correct!"
 				},
 				{
-					correct ? success : failure,
+					correct ? VAL_STATUS_SUCCESS : VAL_STATUS_FAILURE,
 					correct ? "rcos() returned the correct result!" : "rcos() didn’t return the correct result."
 				},
 				{
-					information,
+					VAL_STATUS_INFORMATION,
 					information_message
 				}
 			};
@@ -212,19 +152,19 @@ int main(void) {
 			const unsigned short messagesc = 4;
 			struct val_message_t messagesv[4] = {
 				{
-					success,
+					VAL_STATUS_SUCCESS,
 					"Your commit structure is correct!"
 				},
 				{
-					success,
+					VAL_STATUS_SUCCESS,
 					"Your commit message is correct!"
 				},
 				{
-					failure,
+					VAL_STATUS_FAILURE,
 					"Your code couldn’t be evaluated."
 				},
 				{
-					warning,
+					VAL_STATUS_WARNING,
 					"Check that your code defines a function rcos()."
 				}
 			};
@@ -240,19 +180,19 @@ int main(void) {
 			const unsigned short messagesc = 4;
 			struct val_message_t messagesv[4] = {
 				{
-					success,
+					VAL_STATUS_SUCCESS,
 					"Your commit structure is correct!"
 				},
 				{
-					success,
+					VAL_STATUS_SUCCESS,
 					"Your commit message is correct!"
 				},
 				{
-					failure,
+					VAL_STATUS_FAILURE,
 					"Your code couldn’t be evaluated."
 				},
 				{
-					warning,
+					VAL_STATUS_WARNING,
 					warning_message
 				}
 			};
@@ -275,19 +215,19 @@ int main(void) {
 		const unsigned short messagesc = 4;
 		struct val_message_t messagesv[4] = {
 			{
-				success,
+				VAL_STATUS_SUCCESS,
 				"Your commit structure is correct!"
 			},
 			{
-				failure,
+				VAL_STATUS_FAILURE,
 				"Your commit message is incorrect."
 			},
 			{
-				warning,
+				VAL_STATUS_WARNING,
 				warning_message
 			},
 			{
-				information,
+				VAL_STATUS_INFORMATION,
 				information_message
 			}
 		};

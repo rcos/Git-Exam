@@ -13,8 +13,6 @@
 
 #define FILE_INPUT "custom_validator_input.json"
 #define FILE_URL "URL.txt"
-#define FILE_PUBLIC_KEY "id_ed25519.pub"
-#define FILE_PRIVATE_KEY "id_ed25519"
 #define DIRECTORY_CLONE "Clone"
 #define DIRECTORY_CLONE_PUBLIC "Clone (Public)"
 
@@ -30,13 +28,13 @@ struct list_git_oid_t {
 
 const char* val_status_str(enum val_status_t status) {
 	switch (status) {
-	case failure:
+	case VAL_STATUS_FAILURE:
 		return "failure";
-	case information:
+	case VAL_STATUS_INFORMATION:
 		return "information";
-	case success:
+	case VAL_STATUS_SUCCESS:
 		return "success";
-	case warning:
+	case VAL_STATUS_WARNING:
 		return "warning";
 	default:
 		return NULL;
@@ -86,7 +84,7 @@ void val_error_exit(int ret, struct ptrs_t* ptrs, struct ptrs_git_t* ptrs_git, s
 	val_error_free(ret, ptrs, ptrs_git, ptrs_json, ptrs_python);
 	if (ret < 0) {
 		struct val_message_t message = {
-			.status = failure,
+			.status = VAL_STATUS_FAILURE,
 			.message = "An unknown error occurred."
 		};
 		if (error_message_get) {
@@ -403,7 +401,7 @@ json_object* json_create_val_success(double score, const struct val_message_t me
 json_object* json_create_val_failure(struct val_message_t message) {
 	e_init();
 	
-	if (message.status != failure) {
+	if (message.status != VAL_STATUS_FAILURE) {
 		fprintf(stderr, "Invalid message status\n");
 		free_all();
 		return NULL;
@@ -519,10 +517,20 @@ void val_try_remove_dir(const char* path) {
 	}
 }
 
+struct val_git_clone_payload_t* val_git_clone_payload_new(void) {
+	struct val_git_clone_payload_t* payload = malloc(sizeof(struct val_git_clone_payload_t));
+	payload->halt = false;
+	payload->error = VAL_GIT_CLONE_ERROR_NONE;
+	return payload;
+}
+
 int val_git_credential_acquire(git_credential** out, const char* url, const char* username_from_url, unsigned int allowed_types, void* payload) {
-	bool* halt = (bool*) payload;
-	if (*halt) {
-		return -1;
+	*out = NULL;
+	
+//	bool* halt = (bool*) payload;
+	struct val_git_clone_payload_t* clone_payload = (struct val_git_clone_payload_t*) payload;
+	if (clone_payload->halt) {
+		return 1;
 	} else {
 		fprintf(stderr, "The server asked for one of the following credentials:\n");
 		if ((allowed_types & GIT_CREDENTIAL_USERPASS_PLAINTEXT) == GIT_CREDENTIAL_USERPASS_PLAINTEXT) {
@@ -549,35 +557,72 @@ int val_git_credential_acquire(git_credential** out, const char* url, const char
 		if (allowed_types == 0) {
 			fprintf(stderr, "boo hiss bad server\n");
 		}
-		*halt = true;
-		return git_credential_ssh_key_new(out, username_from_url, FILE_PUBLIC_KEY, FILE_PRIVATE_KEY, NULL);
+		
+		clone_payload->halt = true;
+		
+		char* rcsid = val_input(VAL_INPUT_KEY_RCSID);
+		if (!rcsid) {
+			fprintf(stderr, "Couldn’t read RCS ID\n");
+			clone_payload->error = VAL_GIT_CLONE_ERROR_NORCSID;
+			return 1;
+		}
+		
+		char publickey[strlen(rcsid) + 5];
+		strcpy(publickey, rcsid);
+		strcat(publickey, ".pub");
+		
+		char privatekey[strlen(rcsid) + 1];
+		strcpy(privatekey, rcsid);
+		
+		FILE* fp;
+		
+		fp = fopen(publickey, "r");
+		if (!fp) {
+			fprintf(stderr, "Public key not found for RCS ID: %s\n", rcsid);
+			clone_payload->error = VAL_GIT_CLONE_ERROR_NOPUBLICKEY;
+			return 1;
+		}
+		fclose(fp);
+		
+		fp = fopen(privatekey, "r");
+		if (!fp) {
+			fprintf(stderr, "Private key not found for RCS ID: %s\n", rcsid);
+			clone_payload->error = VAL_GIT_CLONE_ERROR_NOPRIVATEKEY;
+			return 1;
+		}
+		fclose(fp);
+		
+		free(rcsid);
+		
+		return git_credential_ssh_key_new(out, username_from_url, publickey, privatekey, NULL);
 	}
 }
 
-git_repository* val_git_clone(const char* url, bool* access_public) {
+int val_git_clone(const char* url, bool* access_public, git_repository** repository_out) {
 	e_init();
 	
 	fprintf(stderr, "Cloning student repository (%s)…\n", url);
 	
 	*access_public = false;
+	*repository_out = NULL;
 	
 	val_try_remove_dir(DIRECTORY_CLONE);
 	val_try_remove_dir(DIRECTORY_CLONE_PUBLIC);
 	
 	if (strlen(url) < 22) {
 		fprintf(stderr, "Unexpectedly short clone URL: %s\n", url);
-		e_ret_null_force();
+		e_ret_force();
 	}
 	if (strncmp("git@github.com:", url, 15) != 0) {
 		fprintf(stderr, "Clone URL does not have “git@github.com:” as a prefix: %s\n", url);
-		e_ret_null_force();
+		e_ret_force();
 	}
 	
 	char url_https[20 + strlen(url + 15)];
 	snprintf(url_https, sizeof(url_https), "%s%s", "https://github.com/", url + 15);
 	
 	git_clone_options clone_options_public;
-	e_ret_null(git_clone_options_init(&clone_options_public, GIT_CLONE_OPTIONS_VERSION));
+	e_ret(git_clone_options_init(&clone_options_public, GIT_CLONE_OPTIONS_VERSION));
 	
 	git_repository* repository_public;
 	git_clone(&repository_public, url_https, DIRECTORY_CLONE_PUBLIC, &clone_options_public);
@@ -586,39 +631,40 @@ git_repository* val_git_clone(const char* url, bool* access_public) {
 		fprintf(stderr, "Student repository is publicly accessible\n");
 		fprintf(stderr, "Academic-integrity violation detected‼\n");
 		*access_public = true;
-		e_ret_null_force();
+		e_ret_force();
 	}
 	
-	bool* payload = malloc(sizeof(bool));
+	struct val_git_clone_payload_t* payload = val_git_clone_payload_new();
 	if (!payload) {
-		e_ret_null_force();
+		e_ret_force();
 	}
-	*payload = false;
 	ptrs_add(payload);
 	
 	git_remote_callbacks remote_callbacks;
-	e_ret_null(git_remote_init_callbacks(&remote_callbacks, GIT_REMOTE_CALLBACKS_VERSION));
+	e_ret(git_remote_init_callbacks(&remote_callbacks, GIT_REMOTE_CALLBACKS_VERSION));
 	remote_callbacks.credentials = val_git_credential_acquire;
 	remote_callbacks.payload = payload;
 	
 	git_clone_options clone_options;
-	e_ret_null(git_clone_options_init(&clone_options, GIT_CLONE_OPTIONS_VERSION));
+	e_ret(git_clone_options_init(&clone_options, GIT_CLONE_OPTIONS_VERSION));
 	
 	git_fetch_options fetch_options;
-	e_ret_null(git_fetch_options_init(&fetch_options, GIT_FETCH_OPTIONS_VERSION));
+	e_ret(git_fetch_options_init(&fetch_options, GIT_FETCH_OPTIONS_VERSION));
 	fetch_options.callbacks = remote_callbacks;
 	
 	clone_options.fetch_opts = fetch_options;
 	
 	git_repository* repository;
-	e_ret_null(git_clone(&repository, url, DIRECTORY_CLONE, &clone_options));
-	assert(*payload == true);
+	git_clone(&repository, url, DIRECTORY_CLONE, &clone_options);
+	assert(payload->halt == true);
+	*repository_out = repository;
 	
+	enum val_git_clone_error_t error = payload->error;
 	free_all();
-	return repository;
+	return error;
 }
 
-char* val_prefix(void) {
+char* val_input(enum val_input_key_t input_key) {
 	e_init();
 	
 	const json_object* root = json_object_from_file(FILE_INPUT);
@@ -628,27 +674,40 @@ char* val_prefix(void) {
 	}
 	ptrs_json_add(root);
 	
-	json_object* string_testcaseprefix = json_object_object_get(root, "testcase_prefix"); // json_object_object_get(obj, key) doesn’t retain the returned object, so there’s no need for us to add the pointer to the memory-management subsystem.
-	if (!string_testcaseprefix) {
-		fprintf(stderr, "Failed to get the submission prefix from the input file\n");
+	const char* input_key_str;
+	switch (input_key) {
+	case VAL_INPUT_KEY_PREFIX:
+		input_key_str = "testcase_prefix";
+		break;
+	case VAL_INPUT_KEY_RCSID:
+		input_key_str = "username";
+		break;
+	default:
+		fprintf(stderr, "Invalid input key: %u\n", input_key);
 		e_ret_null_force();
 	}
 	
-	const char* testcaseprefix = json_object_get_string(string_testcaseprefix);
-	if (!testcaseprefix) {
-		fprintf(stderr, "Failed to convert the submission prefix JSON object into a C-string\n");
+	json_object* value = json_object_object_get(root, input_key_str); // json_object_object_get(obj, key) doesn’t retain the returned object, so there’s no need for us to add the pointer to the memory-management subsystem.
+	if (!value) {
+		fprintf(stderr, "Failed to get the value for the key “%s” from the input file\n", input_key_str);
 		e_ret_null_force();
 	}
 	
-	char* prefix = calloc(strlen(testcaseprefix) + 1, sizeof(char)); // We add 1 to account for the null terminator.
-	if (!prefix) {
-		fprintf(stderr, "Failed to allocate memory for storing the submission prefix\n");
+	const char* value_str = json_object_get_string(value);
+	if (!value_str) {
+		fprintf(stderr, "Failed to convert the value JSON object for the key “%s” into a C-string\n", input_key_str);
 		e_ret_null_force();
 	}
-	strcpy(prefix, testcaseprefix); // testcaseprefix will be deallocated automatically, so we must copy its memory into a buffer that we own directly.
+	
+	char* value_str_own = calloc(strlen(value_str) + 1, sizeof(char)); // We add 1 to account for the null terminator.
+	if (!value_str_own) {
+		fprintf(stderr, "Failed to allocate memory for storing the value for the key “%s”\n", input_key_str);
+		e_ret_null_force();
+	}
+	strcpy(value_str_own, value_str); // value_str will be deallocated automatically, so we must copy its memory into a buffer that we own directly.
 	
 	free_all();
-	return prefix;
+	return value_str_own;
 }
 
 FILE* val_url_file(void) {

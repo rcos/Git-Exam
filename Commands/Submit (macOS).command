@@ -52,25 +52,21 @@ echo "Step 2: Compiling…"
 cd "$INSTALL_PREFIX"/Grader
 rm valgit.*
 cp "$INSTALL_PREFIX"/valgit/* ./
-clang -c -g -I/opt/homebrew/include -I/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Headers part1.c part2.c part3.c part4.c part5.c stubs.c valgit.c
+clang -c -g -I/opt/homebrew/include -I/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Headers main.c part1.c part2.c part3.c part4.c part5.c stubs.c valgit.c
 rm valgit.h valgit.c
 ln -s "$INSTALL_PREFIX"/valgit/* ./
 
 echo "Step 3: Linking…"
 mkdir -p "$INSTALL_PREFIX"/Build/macOS/"$(arch)"
-ld part1.o stubs.o valgit.o $frameworks -o "$INSTALL_PREFIX"/Build/macOS/"$(arch)"/part1
-ld part2.o stubs.o valgit.o $frameworks -o "$INSTALL_PREFIX"/Build/macOS/"$(arch)"/part2
-ld part3.o stubs.o valgit.o $frameworks -o "$INSTALL_PREFIX"/Build/macOS/"$(arch)"/part3
-ld part4.o stubs.o valgit.o $frameworks -o "$INSTALL_PREFIX"/Build/macOS/"$(arch)"/part4
-ld part5.o stubs.o valgit.o $frameworks -o "$INSTALL_PREFIX"/Build/macOS/"$(arch)"/part5
+ld main.o part1.o part2.o part3.o part4.o part5.o stubs.o valgit.o $frameworks -o "$INSTALL_PREFIX"/Build/macOS/"$(arch)"/grade
 rm *.o
 
 echo "Step 4: Finishing…"
 cd "$INSTALL_PREFIX"/Submission
 mkdir "$SUBMISSION_PREFIX"
-ln -s "$INSTALL_PREFIX"/Build/macOS/"$(arch)"/* ./
+ln -s "$INSTALL_PREFIX"/Build/macOS/"$(arch)"/grade ./
 ln -s "$INSTALL_PREFIX"/Keys/* ./
-echo "{\"testcase_prefix\": \"$SUBMISSION_PREFIX/\"}" > custom_validator_input.json
-echo "$1" > URL.txt
+echo "{\"testcase_prefix\":\"$SUBMISSION_PREFIX/\",\"username\":\"$1\"}" > custom_validator_input.json
+echo "$2" > URL.txt
 
 echo "Done!"

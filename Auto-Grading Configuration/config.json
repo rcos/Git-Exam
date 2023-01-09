@@ -32,7 +32,7 @@
 			"validation": [
 				{
 					"method": "custom_validator",
-					"command": "./part1",
+					"command": "./grade part1",
 					"actual_file": "URL.txt"
 				}
 			]
@@ -43,7 +43,7 @@
 			"validation": [
 				{
 					"method": "custom_validator",
-					"command": "./part2",
+					"command": "./grade part2",
 					"actual_file": "URL.txt"
 				}
 			]
@@ -54,7 +54,7 @@
 			"validation": [
 				{
 					"method": "custom_validator",
-					"command": "./part3",
+					"command": "./grade part3",
 					"actual_file": "URL.txt"
 				}
 			]
@@ -65,7 +65,7 @@
 			"validation": [
 				{
 					"method": "custom_validator",
-					"command": "./part4",
+					"command": "./grade part4",
 					"actual_file": "URL.txt"
 				}
 			]
@@ -76,7 +76,7 @@
 			"validation": [
 				{
 					"method": "custom_validator",
-					"command": "./part5",
+					"command": "./grade part5",
 					"actual_file": "URL.txt"
 				}
 			]

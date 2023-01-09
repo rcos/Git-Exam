@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C05553F4295D18CA0075E57D"
-               BuildableName = "Part 1"
-               BlueprintName = "Part 1"
+               BuildableName = "Grader"
+               BlueprintName = "Grader"
                ReferencedContainer = "container:Validation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -50,11 +50,17 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C05553F4295D18CA0075E57D"
-            BuildableName = "Part 1"
-            BlueprintName = "Part 1"
+            BuildableName = "Grader"
+            BlueprintName = "Grader"
             ReferencedContainer = "container:Validation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "part1"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
          <AdditionalOption
             key = "NSZombieEnabled"
@@ -79,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C05553F4295D18CA0075E57D"
-            BuildableName = "Part 1"
-            BlueprintName = "Part 1"
+            BuildableName = "Grader"
+            BlueprintName = "Grader"
             ReferencedContainer = "container:Validation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
