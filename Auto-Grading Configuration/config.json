@@ -18,7 +18,20 @@
 	"notebook": [
 		{
 			"type": "markdown",
-			"markdown_string": "### SSH Clone URL\nEnter the SSH clone URL for your private GitHub repository."
+			"markdown_string": "## Instructions\nCreate your own private GitHub repository to store your work on this exam. You can name it whatever you want, but don’t add a README, .gitignore, license, or anything else. Keep it private. Further instructions are available in the README for the [source repository](https://github.com/Gerzer/Git-Exam-Source)."
+		},
+		{
+			"type": "markdown",
+			"markdown_string": "### SSH Clone URL\nClick the green “Code” button on the main page for your private GitHub repository and select the “SSH” tab. Then, copy the SSH clone URL and paste it into this notebook below."
+		},
+		{
+			"type": "image",
+			"image": "GitHub.png",
+			"alt_text": "Screenshot of the GitHub interface for retrieving the SSH clone URL"
+		},
+		{
+			"type": "markdown",
+			"markdown_string": "Enter the SSH clone URL for your private GitHub repository."
 		},
 		{
 			"type": "short_answer",
@@ -27,7 +40,7 @@
 	],
 	"testcases": [
 		{
-			"title": "Basic Commit",
+			"title": "Part 1: Basic Commit",
 			"points": 2,
 			"validation": [
 				{
@@ -38,7 +51,7 @@
 			]
 		},
 		{
-			"title": "Branching",
+			"title": "Part 2: Branching",
 			"points": 4,
 			"validation": [
 				{
@@ -49,7 +62,7 @@
 			]
 		},
 		{
-			"title": "Merging",
+			"title": "Part 3: Merging",
 			"points": 2,
 			"validation": [
 				{
@@ -60,7 +73,7 @@
 			]
 		},
 		{
-			"title": "More Branching",
+			"title": "Part 4: More Branching",
 			"points": 4,
 			"validation": [
 				{
@@ -71,7 +84,7 @@
 			]
 		},
 		{
-			"title": "Simple Merge Conflict",
+			"title": "Part 5: Simple Merge Conflict",
 			"points": 4,
 			"validation": [
 				{
