@@ -18,7 +18,7 @@
 	"notebook": [
 		{
 			"type": "markdown",
-			"markdown_string": "## Instructions\nCreate your own private GitHub repository to store your work on this exam. You can name it whatever you want, but don’t add a README, .gitignore, license, or anything else. Keep it private. Further instructions are available in the README for the [source repository](https://github.com/Gerzer/Git-Exam-Source)."
+			"markdown_string": "## Instructions\nCreate your own private GitHub repository to store your work on this exam. You can name it whatever you want, but don’t add a README, `.gitignore`, license, or anything else. Keep it private. Further instructions are available in the README for the [source repository](https://github.com/Gerzer/Git-Exam-Source)."
 		},
 		{
 			"type": "markdown",
@@ -27,7 +27,9 @@
 		{
 			"type": "image",
 			"image": "GitHub.png",
-			"alt_text": "Screenshot of the GitHub interface for retrieving the SSH clone URL"
+			"alt_text": "Screenshot of the GitHub interface for retrieving the SSH clone URL",
+			"height": 407,
+			"width": 919
 		},
 		{
 			"type": "markdown",
