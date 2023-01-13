@@ -684,15 +684,43 @@ int val_git_clone(const char* url, bool* access_public, git_repository** reposit
 	
 	if (strlen(url) < 22) {
 		fprintf(stderr, "Unexpectedly short clone URL: %s\n", url);
-		e_ret_force();
-	}
-	if (strncmp("git@github.com:", url, 15) != 0) {
-		fprintf(stderr, "Clone URL does not have “git@github.com:” as a prefix: %s\n", url);
-		e_ret_force();
+		free_all();
+		return VAL_GIT_CLONE_ERROR_SHORTURL;
 	}
 	
-	char url_https[20 + strlen(url + 15)];
-	snprintf(url_https, sizeof(url_https), "%s%s", "https://github.com/", url + 15);
+	char* url_ssh;
+	if (strncmp("https://github.com/", url, 19) == 0) { // The student submitted an HTTPS clone URL
+		fprintf(stderr, "Clone URL uses HTTPS: %s\n", url);
+		
+		// Convert the HTTPS URL into the corresponding SSH URL
+		url_ssh = calloc(16 + strlen(url + 19), sizeof(char));
+		if (!url_ssh) {
+			fprintf(stderr, "Failed to allocate memory for the converted SSH clone URL\n");
+			fprintf(stderr, "Original HTTPS URL: %s\n", url);
+			e_ret_force();
+		}
+		e_ret = snprintf(url_ssh, (16 + strlen(url + 19)) * sizeof(char), "%s%s", "git@github.com:", url + 19);
+		if (e_ret < 0) {
+			e_ret_force();
+		}
+	} else {
+		url_ssh = calloc(strlen(url) + 1, sizeof(char));
+		if (!url_ssh) {
+			fprintf(stderr, "Failed to allocate memory for the SSH clone URL: %s\n", url);
+			e_ret_force();
+		}
+		memcpy(url_ssh, url, (strlen(url) + 1) * sizeof(char));
+	}
+	ptrs_add(url_ssh);
+	
+	if (strncmp("git@github.com:", url_ssh, 15) != 0) {
+		fprintf(stderr, "Computed clone URL doesn’t have “git@github.com:” as a prefix: %s\n", url);
+		free_all();
+		return VAL_GIT_CLONE_ERROR_INVALIDURL;
+	}
+	
+	char url_https[20 + strlen(url_ssh + 15)];
+	e_ret(snprintf(url_https, sizeof(url_https), "%s%s", "https://github.com/", url_ssh + 15));
 	
 	git_clone_options clone_options_public;
 	e_ret(git_clone_options_init(&clone_options_public, GIT_CLONE_OPTIONS_VERSION));
@@ -728,7 +756,7 @@ int val_git_clone(const char* url, bool* access_public, git_repository** reposit
 	clone_options.fetch_opts = fetch_options;
 	
 	git_repository* repository;
-	git_clone(&repository, url, DIRECTORY_CLONE, &clone_options);
+	git_clone(&repository, url_ssh, DIRECTORY_CLONE, &clone_options);
 	assert(payload->halt == true);
 	*repository_out = repository;
 	

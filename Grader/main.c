@@ -74,6 +74,14 @@ int main(int argc, const char* const argv[]) {
 				failure_message = "There’s no private key for your RCS ID.";
 				warning_message = "Contact your instructor for help.";
 				break;
+			case VAL_GIT_CLONE_ERROR_SHORTURL:
+				failure_message = "Your clone URL is unexpectedly short.";
+				warning_message = "Check that you submitted the full SSH clone URL for your private GitHub repository, which should include both your GitHub username and the repository’s name.";
+				break;
+			case VAL_GIT_CLONE_ERROR_INVALIDURL:
+				failure_message = "Your clone URL is invalid.";
+				warning_message = "Check that you followed the instructions to retrieve the SSH clone URL, which should start with “git@github.com:”.";
+				break;
 			default:
 				failure_message = "Your Git repository couldn’t be cloned.";
 				warning_message = "Check that you submitted the correct SSH clone URL and that you properly configured the deploy key.";
