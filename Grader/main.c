@@ -100,6 +100,7 @@ int main(int argc, const char* const argv[]) {
 	}
 	
 	free_all();
+	
 	const char* const part = argv[1];
 	if (strcmp(part, "part1") == 0) {
 		return part1(repository);

@@ -499,35 +499,6 @@ int val_python_result_file(const char* filename, struct val_python_context_t con
 
 	fclose(fp); // There’s nothing to do differently if fclose fails, so we don’t bother to capture its return value.
 	
-//	FILE* fp = fopen(filename, "r");
-//	if (!fp) {
-//		fprintf(stderr, "Failed to open Python file: %s\n", filename);
-//		e_force();
-//	}
-//	e(fseek(fp, 0, SEEK_END));
-//	long size = ftell(fp);
-//	if (size < 0) {
-//		fprintf(stderr, "Failed to get the size of the Python file: %s\n", filename);
-//		fclose(fp);
-//		e_force();
-//	}
-//	errno = 0;
-//	rewind(fp);
-//	if (errno) {
-//		fprintf(stderr, "Failed to rewind the Python file: %s\n", filename);
-//		fclose(fp);
-//		e_force();
-//	}
-//	char str[size + sizeof(char)];
-//	unsigned long end = fread(str, sizeof(char), size, fp);
-//	if (ferror(fp)) {
-//		fprintf(stderr, "Failed to read the Python file: %s\n", filename);
-//		fclose(fp);
-//		e_force();
-//	}
-//	fclose(fp);
-//	str[end] = '\0';
-	
 	free_all();
 	return 0;
 }
@@ -630,7 +601,6 @@ struct val_git_clone_payload_t* val_git_clone_payload_new(void) {
 int val_git_credential_acquire(git_credential** out, const char* url, const char* username_from_url, unsigned int allowed_types, void* payload) {
 	*out = NULL;
 	
-//	bool* halt = (bool*) payload;
 	struct val_git_clone_payload_t* clone_payload = (struct val_git_clone_payload_t*) payload;
 	if (clone_payload->halt) {
 		return 1;
