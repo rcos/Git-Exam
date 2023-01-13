@@ -17,12 +17,13 @@
 #define REPOSITORY_PREFIX "Clone/"
 
 #define e_init() int e_ret; char* e_str; ptrs_init(); ptrs_git_init(); ptrs_json_init(); ptrs_python_init()
+#define e(func) errno = 0; e_ret = func; val_error_exit(e_ret, &ptrs, &ptrs_git, &ptrs_json, &ptrs_python, val_error_message, NULL)
 #define e_force() val_error_exit(-1, &ptrs, &ptrs_git, &ptrs_json, &ptrs_python, val_error_message, NULL)
 #define e_force_str(str_message_custom) val_error_exit(-1, &ptrs, &ptrs_git, &ptrs_json, &ptrs_python, NULL, str_message_custom)
-#define e_git(func) e_ret = func; val_error_exit(e_ret, &ptrs, &ptrs_git, &ptrs_json, &ptrs_python, val_error_message_git, NULL)
+#define e_git(func) errno = 0; e_ret = func; val_error_exit(e_ret, &ptrs, &ptrs_git, &ptrs_json, &ptrs_python, val_error_message_git, NULL)
 #define e_git_force() val_error_exit(-1, &ptrs, &ptrs_git, &ptrs_json, &ptrs_python, val_error_message_git, NULL)
 #define e_str_git(func) e_str = func; if (!e_str || strlen(e_str) == 0) val_error_exit(-1, &ptrs, &ptrs_git, &ptrs_json, &ptrs_python, val_error_message_git, NULL)
-#define e_json(func) e_ret = func; val_error_exit(e_ret, &ptrs, &ptrs_git, &ptrs_json, &ptrs_python, val_error_message_json, NULL)
+#define e_json(func) errno = 0; e_ret = func; val_error_exit(e_ret, &ptrs, &ptrs_git, &ptrs_json, &ptrs_python, val_error_message_json, NULL)
 #define e_json_force() val_error_exit(-1, &ptrs, &ptrs_git, &ptrs_json, &ptrs_python, val_error_message_json, NULL)
 #define ptrs_init() struct ptrs_t ptrs = { .len = 0, .ptrs = NULL }
 #define ptrs_add(ptr) ptrs_add2((void*) ptr, &ptrs)
@@ -66,6 +67,12 @@ enum val_git_clone_error_t {
 struct val_git_clone_payload_t {
 	bool halt;
 	enum val_git_clone_error_t error;
+};
+
+struct val_python_context_t {
+	PyObject* module_obj;
+	PyObject* globals;
+	PyObject* locals;
 };
 
 struct val_message_t {
@@ -126,7 +133,13 @@ json_object* json_create_val_success(double score, const struct val_message_t me
 
 json_object* json_create_val_failure(struct val_message_t message);
 
-char* val_python_result(const char* eval, const char* filename, bool* eval_failed);
+char* val_python_result(const char* eval, struct val_python_context_t context, bool* eval_failed);
+
+int val_python_result_file(const char* filename, struct val_python_context_t context, int start);
+
+char* val_python_result_new(const char* eval, const char* filename, struct val_python_context_t* const context, bool* eval_failed);
+
+void val_python_free(struct val_python_context_t context);
 
 int val_git_clone(const char* url, bool* access_public, git_repository** repository_out);
 

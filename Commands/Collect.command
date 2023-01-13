@@ -17,6 +17,7 @@ fi
 rm -r "$INSTALL_PREFIX"/Auto-Grading\ Configuration/custom_validation_code
 mkdir "$INSTALL_PREFIX"/Auto-Grading\ Configuration/custom_validation_code
 cp "$INSTALL_PREFIX"/Build/Linux/x86_64/* "$INSTALL_PREFIX"/Auto-Grading\ Configuration/custom_validation_code/
+cp "$INSTALL_PREFIX"/Grading\ Files/* "$INSTALL_PREFIX"/Auto-Grading\ Configuration/custom_validation_code/
 cp "$INSTALL_PREFIX"/Keys/* "$INSTALL_PREFIX"/Auto-Grading\ Configuration/custom_validation_code/
 
 echo "Done!"

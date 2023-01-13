@@ -63,7 +63,7 @@ int part2(git_repository* repository) {
 		end();
 	}
 	
-	// Find the second commit after the initial commit in the “part2” branch
+	// Find the relevant commit on the “part2” branch
 	git_oid oid_commit_part2;
 	bool first_part2;
 	const unsigned int pathc_part2 = 0;
@@ -71,7 +71,7 @@ int part2(git_repository* repository) {
 	e_git(git_nth_commit_oid(&oid_commit_part2, &first_part2, 2, pathv_part2, pathc_part2, NULL, reference_part2, repository));
 	git_reference_free(reference_part2);
 	
-	// Find the second commit after the initial commit in the “main” branch
+	// Find the relevant commit on the “main” branch
 	git_oid oid_commit_main;
 	bool first_main;
 	const unsigned int pathc_main = 0;
@@ -183,25 +183,29 @@ int part2(git_repository* repository) {
 		// Evaluate the code in the “part2” branch
 		e_git(git_checkout_tree(repository, (git_object*) commit_part2, &opts));
 		bool eval_failed_part2;
-		char* result_part2 = val_python_result("alyssa_p()", filename, &eval_failed_part2);
+		char* result_part2 = val_python_result_new("alyssa_p()", filename, NULL, &eval_failed_part2);
+		if (result_part2) {
+			ptrs_add(result_part2);
+		}
 		
 		// Evaluate the code in the “main” branch
 		e_git(git_checkout_tree(repository, (git_object*) commit_main, &opts));
 		bool eval_failed_main;
-		char* result_main = val_python_result("alyssa()", filename, &eval_failed_main);
+		char* result_main = val_python_result_new("alyssa()", filename, NULL, &eval_failed_main);
+		if (result_main) {
+			ptrs_add(result_main);
+		}
 		
 		if (result_part2 && result_main) {
 			// Check the result in the “part2” branch
 			bool correct_part2 = strcmp(result_part2, "p. hacker") == 0;
 			char information_message_part2[58 + strlen(result_part2)];
 			snprintf(information_message_part2, sizeof(information_message_part2), "alyssa_p() execution result on the “part2” branch: \"%s\"", result_part2);
-			free(result_part2);
 			
 			// Check the result in the “main” branch
 			bool correct_main = strcmp(result_main, "hacker") == 0;
 			char information_message_main[55 + strlen(result_main)];
 			snprintf(information_message_main, sizeof(information_message_main), "alyssa() execution result on the “main” branch: \"%s\"", result_main);
-			free(result_main);
 			
 			const unsigned short messagesc = 6;
 			struct val_message_t messagesv[6] = {

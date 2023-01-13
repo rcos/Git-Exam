@@ -95,6 +95,17 @@
 					"actual_file": "URL.txt"
 				}
 			]
+		},
+		{
+			"title": "Part 6: Complex Rebasing",
+			"points": 8,
+			"validation": [
+				{
+					"method": "custom_validator",
+					"command": "./grade part6",
+					"actual_file": "URL.txt"
+				}
+			]
 		}
 	]
 }

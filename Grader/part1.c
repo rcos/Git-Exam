@@ -41,7 +41,7 @@ int part1(git_repository* repository) {
 		end();
 	}
 	
-	// Find the first commit after the initial commit
+	// Find the relevant commit
 	git_oid oid_commit;
 	bool first;
 	const unsigned int pathc = 0;
@@ -116,13 +116,12 @@ int part1(git_repository* repository) {
 		// Evaluate the code
 		e_git(git_checkout_tree(repository, (git_object*) commit, &opts));
 		bool eval_failed;
-		char* result = val_python_result("rcos()", filename, &eval_failed);
-		
+		char* result = val_python_result_new("rcos()", filename, NULL, &eval_failed);
 		if (result) { // It’s an invariant that eval_failed is false if result is not NULL.
+			ptrs_add(result);
 			bool correct = strcmp(result, "Rensselaer Center for Open Source") == 0;
 			char information_message[53 + strlen(result)];
 			snprintf(information_message, sizeof(information_message), "rcos() execution result: \"%s\"", result);
-			free(result);
 			const unsigned short messagesc = 4;
 			struct val_message_t messagesv[4] = {
 				{

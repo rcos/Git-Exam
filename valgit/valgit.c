@@ -196,14 +196,15 @@ void ptrs_python_free2(struct ptrs_python_t* ptrs_python) {
 		free(ptrs_python->ptrs);
 	}
 	ptrs_python->len = 0;
-	Py_Finalize();
 }
 
 int git_nth_commit_oid(git_oid* oid, bool* first, unsigned int n, const unsigned int pathv[], unsigned int pathc, const char* path_start, const git_reference* ref, git_repository* repo) {
 	e_init();
 	
-	// Assume by default that the found commit won’t be a source in the commit graph
-	*first = false;
+	if (first) {
+		// Assume by default that the found commit won’t be a source in the commit graph
+		*first = false;
+	}
 	
 	git_oid oid_commit;
 	git_oid oid_commit_parent;
@@ -221,7 +222,9 @@ int git_nth_commit_oid(git_oid* oid, bool* first, unsigned int n, const unsigned
 	git_commit_free(commit_orig);
 	if (parentcount_parent == 0) {
 		*oid = oid_commit_parent;
-		*first = true;
+		if (first) {
+			*first = true;
+		}
 		return 0;
 	}
 	
@@ -435,48 +438,12 @@ json_object* json_create_val_failure(struct val_message_t message) {
 	return object_root;
 }
 
-char* val_python_result(const char* eval, const char* filename, bool* eval_failed) {
+char* val_python_result(const char* eval, struct val_python_context_t context, bool* eval_failed) {
 	e_init();
-	Py_Initialize();
 	
 	*eval_failed = false;
 	
-	PyObject* module = PyModule_New("module");
-	if (!module) {
-		e_ret_null_force();
-	}
-	ptrs_python_add(module);
-	
-	PyModule_AddStringConstant(module, "__file__", "");
-	
-	PyObject* globals = PyDict_New();
-	if (!globals) {
-		e_ret_null_force();
-	}
-	ptrs_python_add(globals);
-	
-	PyObject* locals = PyModule_GetDict(module);
-	if (!locals) {
-		e_ret_null_force();
-	}
-	Py_IncRef(locals); // The Python runtime will automatically release locals, so we need to retain it ourselves to maintain ownership.
-	ptrs_python_add(locals);
-	
-	FILE* fp = fopen(filename, "r");
-	if (!fp) {
-		fprintf(stderr, "Failed to open Python file: %s\n", filename);
-		e_ret_null_force();
-	}
-	
-	PyObject* temp = PyRun_File(fp, filename, Py_file_input, globals, locals);
-	if (!temp) {
-		e_ret_null_force();
-	}
-	Py_DecRef(temp);
-	
-	fclose(fp); // There’s nothing to do differently if fclose fails, so we don’t bother to capture its return value.
-	
-	PyObject* object = PyRun_String(eval, Py_eval_input, globals, locals);
+	PyObject* object = PyRun_String(eval, Py_eval_input, context.globals, context.locals);
 	char* result = NULL;
 	if (object) {
 		PyObject* unicode = PyObject_Str(object);
@@ -487,16 +454,152 @@ char* val_python_result(const char* eval, const char* filename, bool* eval_faile
 		
 		Py_ssize_t size;
 		const char* string = PyUnicode_AsUTF8AndSize(unicode, &size);
+		if (!string) {
+			fprintf(stderr, "The Python evaluation result is not a string\n");
+			*eval_failed = true;
+			Py_DecRef(unicode);
+			Py_DecRef(object);
+			free_all();
+			return NULL;
+		}
 		result = malloc(size + sizeof(char)); // We add the size of an additonal char to account for the null terminator.
+		if (!result) {
+			fprintf(stderr, "Couldn’t allocate memory on the heap to hold the Python evaluation result string\n");
+			Py_DecRef(unicode);
+			Py_DecRef(object);
+			e_ret_null_force();
+		}
 		strcpy(result, string); // string will be deallocated automatically, so we must copy its memory into a buffer that we own directly.
 		Py_DecRef(unicode);
 		Py_DecRef(object);
 	} else {
+		fprintf(stderr, "Couldn’t evaluate the Python string\n");
 		*eval_failed = true;
 	}
 	
 	free_all();
 	return result;
+}
+
+int val_python_result_file(const char* filename, struct val_python_context_t context, int start) {
+	e_init();
+	
+	FILE* fp = fopen(filename, "r");
+	if (!fp) {
+		fprintf(stderr, "Failed to open Python file: %s\n", filename);
+		e_ret_force();
+	}
+	PyObject* temp = PyRun_File(fp, filename, start, context.globals, context.globals);
+	if (!temp) {
+		fprintf(stderr, "Couldn’t evaluate the Python file\n");
+		fclose(fp);
+		e_ret_force();
+	}
+	Py_DecRef(temp);
+
+	fclose(fp); // There’s nothing to do differently if fclose fails, so we don’t bother to capture its return value.
+	
+//	FILE* fp = fopen(filename, "r");
+//	if (!fp) {
+//		fprintf(stderr, "Failed to open Python file: %s\n", filename);
+//		e_force();
+//	}
+//	e(fseek(fp, 0, SEEK_END));
+//	long size = ftell(fp);
+//	if (size < 0) {
+//		fprintf(stderr, "Failed to get the size of the Python file: %s\n", filename);
+//		fclose(fp);
+//		e_force();
+//	}
+//	errno = 0;
+//	rewind(fp);
+//	if (errno) {
+//		fprintf(stderr, "Failed to rewind the Python file: %s\n", filename);
+//		fclose(fp);
+//		e_force();
+//	}
+//	char str[size + sizeof(char)];
+//	unsigned long end = fread(str, sizeof(char), size, fp);
+//	if (ferror(fp)) {
+//		fprintf(stderr, "Failed to read the Python file: %s\n", filename);
+//		fclose(fp);
+//		e_force();
+//	}
+//	fclose(fp);
+//	str[end] = '\0';
+	
+	free_all();
+	return 0;
+}
+
+char* val_python_result_new(const char* eval, const char* filename, struct val_python_context_t* const context, bool* eval_failed) {
+	e_init();
+	
+	*eval_failed = false;
+	
+	PyObject* module_obj = PyModule_New("module");
+	if (!module_obj) {
+		fprintf(stderr, "Couldn’t create the Python module object\n");
+		e_ret_null_force();
+	}
+	if (context) {
+		context->module_obj = module_obj;
+	} else {
+		ptrs_python_add(module_obj);
+	}
+	
+	PyModule_AddStringConstant(module_obj, "__file__", "");
+	
+	PyObject* globals = PyDict_New();
+	if (!globals) {
+		fprintf(stderr, "Couldn’t create the Python globals dictionary\n");
+		e_ret_null_force();
+	}
+	if (context) {
+		context->globals = globals;
+	} else {
+		ptrs_python_add(globals);
+	}
+	
+	PyObject* locals = PyModule_GetDict(module_obj);
+	if (!locals) {
+		fprintf(stderr, "Couldn’t get the Python locals dictionary\n");
+		e_ret_null_force();
+	}
+	Py_IncRef(locals); // The Python runtime will automatically release locals, so we need to retain it ourselves to maintain ownership.
+	if (context) {
+		context->locals = locals;
+	} else {
+		ptrs_python_add(locals);
+	}
+	
+	struct val_python_context_t context_actual;
+	if (context) {
+		context_actual = *context;
+	} else {
+		context_actual = (struct val_python_context_t) {
+			.module_obj = module_obj,
+			.globals = globals,
+			.locals = locals
+		};
+	}
+	e_ret_null(val_python_result_file(filename, context_actual, Py_file_input));
+	char* result;
+	if (eval) {
+		result = val_python_result(eval, context_actual, eval_failed);
+	} else {
+		result = calloc(1, sizeof(char));
+		*result = '\0';
+	}
+	
+	free_all();
+	return result;
+}
+
+void val_python_free(struct val_python_context_t context) {
+	Py_DecRef(context.module_obj);
+	Py_DecRef(context.globals);
+	Py_DecRef(context.locals);
 }
 
 int val_remove(const char* path, const struct stat* stat_ptr, int flag, struct FTW* ftw_ptr) {

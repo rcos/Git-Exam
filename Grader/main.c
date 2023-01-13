@@ -11,6 +11,7 @@
 int main(int argc, const char* const argv[]) {
 	e_init();
 	e_git(git_libgit2_init());
+	Py_Initialize();
 	int ret;
 	
 	if (argc != 2) {
@@ -110,6 +111,8 @@ int main(int argc, const char* const argv[]) {
 		return part4(repository);
 	} else if (strcmp(part, "part5") == 0) {
 		return part5(repository);
+	} else if (strcmp(part, "part6") == 0) {
+		return part6(repository);
 	} else {
 		char error_str[24 + strlen(part)];
 		snprintf(error_str, sizeof(error_str), "Invalid part argument: %s", part);

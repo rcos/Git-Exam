@@ -9,8 +9,9 @@
 #define parts_h
 
 #include "git2.h"
+#include <Python.h>
 
-#define end() free_all(); git_libgit2_shutdown(); return EXIT_SUCCESS
+#define end() free_all(); Py_Finalize(); git_libgit2_shutdown(); return EXIT_SUCCESS
 
 int part1(git_repository* repository);
 
@@ -21,5 +22,7 @@ int part3(git_repository* repository);
 int part4(git_repository* repository);
 
 int part5(git_repository* repository);
+
+int part6(git_repository* repository);
 
 #endif /* parts_h */

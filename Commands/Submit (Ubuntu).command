@@ -150,7 +150,7 @@ cd "$INSTALL_PREFIX"/Grader/
 rm valgit.*
 cp "$INSTALL_PREFIX"/valgit/* ./
 mkdir -p "$INSTALL_PREFIX"/Build/Linux/"$(arch)"
-clang -g -static -D_XOPEN_SOURCE=500 -I$include_python main.c part1.c part2.c part3.c part4.c part5.c stubs.c valgit.c $frameworks -o "$INSTALL_PREFIX"/Build/Linux/"$(arch)"/grade
+clang -g -static -D_XOPEN_SOURCE=500 -I$include_python main.c part1.c part2.c part3.c part4.c part5.c part6.c stubs.c valgit.c $frameworks -o "$INSTALL_PREFIX"/Build/Linux/"$(arch)"/grade
 rm valgit.h valgit.c
 ln -s "$INSTALL_PREFIX"/valgit/* ./
 
@@ -158,6 +158,7 @@ echo "Step 3:	Finishing…"
 cd "$INSTALL_PREFIX"/Submission
 mkdir "$SUBMISSION_PREFIX"
 ln -s "$INSTALL_PREFIX"/Build/Linux/"$(arch)"/grade ./
+ln -s "$INSTALL_PREFIX"/Grading\ Files/* ./
 ln -s "$INSTALL_PREFIX"/Keys/* ./
 echo "{\"testcase_prefix\":\"$SUBMISSION_PREFIX/\",\"username\":\"$1\"}" > custom_validator_input.json
 echo "$2" > URL.txt

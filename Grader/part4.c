@@ -63,7 +63,7 @@ int part4(git_repository* repository) {
 		end();
 	}
 	
-	// Find the second commit after the initial commit in the “part4” branch
+	// Find the relevant commit on the “part4” branch
 	git_oid oid_commit_part4;
 	bool first_part4;
 	const unsigned int pathc_part4 = 0;
@@ -71,7 +71,7 @@ int part4(git_repository* repository) {
 	e_git(git_nth_commit_oid(&oid_commit_part4, &first_part4, 4, pathv_part4, pathc_part4, NULL, reference_part4, repository));
 	git_reference_free(reference_part4);
 	
-	// Find the second commit after the initial commit in the “main” branch
+	// Find the relevant commit on the “main” branch
 	git_oid oid_commit_main;
 	bool first_main;
 	const unsigned int pathc_main = 0;
@@ -183,25 +183,29 @@ int part4(git_repository* repository) {
 		// Evaluate the code in the “part4” branch
 		e_git(git_checkout_tree(repository, (git_object*) commit_part4, &opts));
 		bool eval_failed_part4;
-		char* result_part4 = val_python_result("ben()", filename, &eval_failed_part4);
+		char* result_part4 = val_python_result_new("ben()", filename, NULL, &eval_failed_part4);
+		if (result_part4) {
+			ptrs_add(result_part4);
+		}
 		
 		// Evaluate the code in the “main” branch
 		e_git(git_checkout_tree(repository, (git_object*) commit_main, &opts));
 		bool eval_failed_main;
-		char* result_main = val_python_result("willy()", filename, &eval_failed_main);
+		char* result_main = val_python_result_new("willy()", filename, NULL, &eval_failed_main);
+		if (result_main) {
+			ptrs_add(result_main);
+		}
 		
 		if (result_part4 && result_main) {
 			// Check the result in the “part4” branch
 			bool correct_part4 = strcmp(result_part4, "wazoo") == 0;
 			char information_message_part4[53 + strlen(result_part4)];
 			snprintf(information_message_part4, sizeof(information_message_part4), "ben() execution result on the “part4” branch: \"%s\"", result_part4);
-			free(result_part4);
 			
 			// Check the result in the “main” branch
 			bool correct_main = strcmp(result_main, "bitdiddle") == 0;
 			char information_message_main[54 + strlen(result_main)];
 			snprintf(information_message_main, sizeof(information_message_main), "willy() execution result on the “main” branch: \"%s\"", result_main);
-			free(result_main);
 			
 			const unsigned short messagesc = 6;
 			struct val_message_t messagesv[6] = {

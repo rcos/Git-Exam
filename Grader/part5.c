@@ -42,16 +42,16 @@ int part5(git_repository* repository) {
 		end();
 	}
 	
-	// Find the first commit after the initial commit
-	git_oid oid_commit;
+	// Find the relevant commit
+	git_oid oid_commit_13;
 	bool first;
 	const unsigned int pathc = 0;
 	const unsigned int pathv[pathc];
-	e_git(git_nth_commit_oid(&oid_commit, &first, 5, pathv, pathc, NULL, reference, repository));
+	e_git(git_nth_commit_oid(&oid_commit_13, &first, 5, pathv, pathc, NULL, reference, repository));
 	git_reference_free(reference);
 	
 	// Check that the OID isn’t zero
-	if (git_oid_is_zero(&oid_commit)) {
+	if (git_oid_is_zero(&oid_commit_13)) {
 		const unsigned short messagesc = 1;
 		struct val_message_t messagesv[1] = {
 			{
@@ -92,7 +92,7 @@ int part5(git_repository* repository) {
 	
 	// Look up the commit
 	git_commit* commit;
-	e_git(git_commit_lookup(&commit, repository, &oid_commit));
+	e_git(git_commit_lookup(&commit, repository, &oid_commit_13));
 	ptrs_git_add(commit);
 	
 	unsigned int parentcount = git_commit_parentcount(commit);
@@ -119,7 +119,7 @@ int part5(git_repository* repository) {
 	
 	// Check the commit’s message
 	char* hash = calloc(41, sizeof(char));
-	e_str_git(git_oid_tostr(hash, 41, &oid_commit));
+	e_str_git(git_oid_tostr(hash, 41, &oid_commit_13));
 	const char* commit_message = git_commit_message(commit);
 	const size_t end = MAX(strcspn(commit_message, "\f\n\r"), 1);
 	char commit_message_own[end + 1];
@@ -140,24 +140,28 @@ int part5(git_repository* repository) {
 		
 		// Evaluate ben()
 		bool eval_failed_ben;
-		char* result_ben = val_python_result("ben()", filename, &eval_failed_ben);
+		char* result_ben = val_python_result_new("ben()", filename, NULL, &eval_failed_ben);
+		if (result_ben) {
+			ptrs_add(result_ben);
+		}
 		
 		// Evaluate willy()
 		bool eval_failed_willy;
-		char* result_willy = val_python_result("willy()", filename, &eval_failed_willy);
+		char* result_willy = val_python_result_new("willy()", filename, NULL, &eval_failed_willy);
+		if (result_willy) {
+			ptrs_add(result_willy);
+		}
 		
 		if (result_ben && result_willy) {
 			// Check the result for ben()
 			bool correct_ben = strcmp(result_ben, "bitdiddle") == 0;
 			char information_message_ben[52 + strlen(result_ben)];
 			snprintf(information_message_ben, sizeof(information_message_ben), "ben() execution result: \"%s\"", result_ben);
-			free(result_ben);
 			
 			// Check the result for willy()
 			bool correct_willy = strcmp(result_willy, "wazoo") == 0;
 			char information_message_willy[54 + strlen(result_willy)];
 			snprintf(information_message_willy, sizeof(information_message_willy), "willy() execution result: \"%s\"", result_willy);
-			free(result_willy);
 			
 			const unsigned short messagesc = 6;
 			struct val_message_t messagesv[6] = {
