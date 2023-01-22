@@ -18,7 +18,7 @@
 	"notebook": [
 		{
 			"type": "markdown",
-			"markdown_string": "## Instructions\nCreate your own private GitHub repository to store your work on this exam. You can name it whatever you want, but don’t add a README, `.gitignore`, license, or anything else. Keep it private. Further instructions are available in the README for the [source repository](https://github.com/Gerzer/Git-Exam-Source)."
+			"markdown_string": "## Submission\nCreate your own private GitHub repository to store your work on this exam. You can name it whatever you want, but don’t add a README, `.gitignore`, license, or anything else. Keep it private. Further instructions are available in the README for the [source repository](https://github.com/Gerzer/Git-Exam-Source)."
 		},
 		{
 			"type": "markdown",
@@ -38,6 +38,10 @@
 		{
 			"type": "short_answer",
 			"filename": "URL.txt"
+		},
+		{
+			"type": "markdown",
+			"markdown_string": "## Instructions\n1.\tClone the [source repository](https://github.com/Gerzer/Git-Exam-Source).\n\t-\tYou’ll need to use the SSH clone URL when submitting the exam on Submitty, but it’s often easier to use the HTTPS clone URL when cloning the source repository locally.\n\t-\tFollow [GitHub’s official instructions](https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git) if you encounter authentication problems.\n2.\tCreate your own private Git repository on GitHub.\n3.\tAdd the public key that your instructor provided to you as a deploy key in your private Git repository.\n\t-\tFollow [GitHub’s official instructions](https://docs.github.com/en/developers/overview/managing-deploy-keys#deploy-keys).\n\t-\tSkip step 1 of those instructions.\n\t-\tYou do not need to enable write access.\n4.\tAdd that private Git repository as a remote in your local working copy of this repository.\n\t-\tAs with the source repository, you might find it easier to use the HTTPS clone URL when adding your private repository as a remote in your local working copy. Remember to use the SSH clone URL when submitting the exam on Submitty.\n5.\tComplete the exam per the instructions in the Markdown files in the `Instructions` directory.\n\t-\tUnless otherwise specified, all code should be written in the provided `Code.py` Python file.\n6.\tSubmit your exam on Submitty by entering the SSH clone URL for your private GitHub repository."
 		}
 	],
 	"testcases": [
