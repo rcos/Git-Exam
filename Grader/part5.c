@@ -155,12 +155,12 @@ int part5(git_repository* repository) {
 		if (result_ben && result_willy) {
 			// Check the result for ben()
 			bool correct_ben = strcmp(result_ben, "bitdiddle") == 0;
-			char information_message_ben[52 + strlen(result_ben)];
+			char information_message_ben[27 + strlen(result_ben)];
 			snprintf(information_message_ben, sizeof(information_message_ben), "ben() execution result: \"%s\"", result_ben);
 			
 			// Check the result for willy()
 			bool correct_willy = strcmp(result_willy, "wazoo") == 0;
-			char information_message_willy[54 + strlen(result_willy)];
+			char information_message_willy[29 + strlen(result_willy)];
 			snprintf(information_message_willy, sizeof(information_message_willy), "willy() execution result: \"%s\"", result_willy);
 			
 			const unsigned short messagesc = 6;
@@ -209,7 +209,7 @@ int part5(git_repository* repository) {
 			// In this disjunctive syllogism, if eval_failed_ben is false, then eval_failed_willy must be true.
 			const char* name_function = eval_failed_ben ? "ben" : "willy";
 			
-			char warning_message[42 + strlen(name_function)];
+			char warning_message[44 + strlen(name_function)];
 			snprintf(warning_message, sizeof(warning_message), "Check that your code defines a function %s().", name_function);
 			const unsigned short messagesc = 4;
 			struct val_message_t messagesv[4] = {
@@ -267,7 +267,7 @@ int part5(git_repository* repository) {
 		}
 	} else {
 		// Set the warning message
-		char warning_message[38 + strlen(COMMIT_MESSAGE_PREFIX)];
+		char warning_message[46 + strlen(COMMIT_MESSAGE_PREFIX)];
 		snprintf(warning_message, sizeof(warning_message), "Your commit message should start with “%s”.", COMMIT_MESSAGE_PREFIX);
 		
 		// Set the information message

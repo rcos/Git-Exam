@@ -228,7 +228,7 @@ int part3(git_repository* repository) {
 		}
 	} else {
 		// Set the warning message
-		char warning_message[38 + strlen(COMMIT_MESSAGE_PREFIX)];
+		char warning_message[46 + strlen(COMMIT_MESSAGE_PREFIX)];
 		snprintf(warning_message, sizeof(warning_message), "Your commit message should start with “%s”.", COMMIT_MESSAGE_PREFIX);
 		
 		// Set the information message

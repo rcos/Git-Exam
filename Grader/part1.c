@@ -120,7 +120,7 @@ int part1(git_repository* repository) {
 		if (result) { // It’s an invariant that eval_failed is false if result is not NULL.
 			ptrs_add(result);
 			bool correct = strcmp(result, "Rensselaer Center for Open Source") == 0;
-			char information_message[53 + strlen(result)];
+			char information_message[28 + strlen(result)];
 			snprintf(information_message, sizeof(information_message), "rcos() execution result: \"%s\"", result);
 			const unsigned short messagesc = 4;
 			struct val_message_t messagesv[4] = {

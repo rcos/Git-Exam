@@ -255,7 +255,7 @@ int part4(git_repository* repository) {
 			const char* name_branch = eval_failed_part4 ? "part4" : "main";
 			const char* name_function = eval_failed_part4 ? "ben" : "willy";
 			
-			char warning_message[66 + strlen(name_branch) + strlen(name_function)];
+			char warning_message[65 + strlen(name_branch) + strlen(name_function)];
 			snprintf(warning_message, sizeof(warning_message), "Check that your code in the “%s” branch defines a function %s().", name_branch, name_function);
 			const unsigned short messagesc = 4;
 			struct val_message_t messagesv[4] = {
@@ -313,15 +313,15 @@ int part4(git_repository* repository) {
 		}
 	} else {
 		// Set the warning message
-		char warning_message[44 + strlen(COMMIT_MESSAGE_PREFIX)];
+		char warning_message[52 + strlen(COMMIT_MESSAGE_PREFIX)];
 		snprintf(warning_message, sizeof(warning_message), "Your commit messages should both start with “%s”.", COMMIT_MESSAGE_PREFIX);
 		
 		// Set the information message for the “part4” branch
-		char information_message_part4[36 + strlen(commit_message_own_part4)];
+		char information_message_part4[40 + strlen(commit_message_own_part4)];
 		snprintf(information_message_part4, sizeof(information_message_part4), "Your “part4” commit message: “%s”", commit_message_own_part4);
 		
 		// Set the information message for the “main” branch
-		char information_message_main[35 + strlen(commit_message_own_main)];
+		char information_message_main[39 + strlen(commit_message_own_main)];
 		snprintf(information_message_main, sizeof(information_message_main), "Your “main” commit message: “%s”", commit_message_own_main);
 		
 		const unsigned short messagesc = 5;

@@ -179,7 +179,7 @@ int part6(git_repository* repository) {
 		ptrs_add(result_13_fullname);
 		if (strcmp(result_13_fullname, "Computability & Logic") != 0) {
 			val_python_free(context_13);
-			char information_message[70 + strlen(result_13_fullname)];
+			char information_message[45 + strlen(result_13_fullname)];
 			snprintf(information_message, sizeof(information_message), "full_name() execution result for step 13: \"%s\"", result_13_fullname);
 			
 			const unsigned short messagesc = 3;
@@ -238,7 +238,7 @@ int part6(git_repository* repository) {
 		ptrs_add(result_13_conflict);
 		if (strcmp(result_13_conflict, "['True', 'True']") != 0) {
 			val_python_free(context_13);
-			char information_message[69 + strlen(result_13_conflict)];
+			char information_message[44 + strlen(result_13_conflict)];
 			snprintf(information_message, sizeof(information_message), "conflict() execution result for step 13: \"%s\"", result_13_conflict);
 			
 			const unsigned short messagesc = 4;
@@ -301,7 +301,7 @@ int part6(git_repository* repository) {
 		ptrs_add(result_13_hours);
 		if (strcmp(result_13_hours, "4") != 0) {
 			val_python_free(context_13);
-			char information_message[66 + strlen(result_13_hours)];
+			char information_message[41 + strlen(result_13_hours)];
 			snprintf(information_message, sizeof(information_message), "hours() execution result for step 13: \"%s\"", result_13_hours);
 			
 			const unsigned short messagesc = 5;
@@ -387,7 +387,7 @@ int part6(git_repository* repository) {
 		ptrs_add(result_9_conflict);
 		if (strcmp(result_9_conflict, "['False', 'True']") != 0) {
 			val_python_free(context_9);
-			char information_message[68 + strlen(result_9_conflict)];
+			char information_message[43 + strlen(result_9_conflict)];
 			snprintf(information_message, sizeof(information_message), "conflict() execution result for step 9: \"%s\"", result_9_conflict);
 			
 			const unsigned short messagesc = 6;
@@ -476,7 +476,7 @@ int part6(git_repository* repository) {
 		ptrs_add(result_4_fullname);
 		if (strcmp(result_4_fullname, "PHIL-4420 Computability & Logic") != 0) {
 			val_python_free(context_4);
-			char information_message[69 + strlen(result_4_fullname)];
+			char information_message[44 + strlen(result_4_fullname)];
 			snprintf(information_message, sizeof(information_message), "full_name() execution result for step 4: \"%s\"", result_4_fullname);
 			
 			const unsigned short messagesc = 7;
@@ -570,7 +570,7 @@ int part6(git_repository* repository) {
 		ptrs_add(result_18_fullname);
 		if (strcmp(result_18_fullname, "Conflict!") != 0) {
 			val_python_free(context_18);
-			char information_message[70 + strlen(result_18_fullname)];
+			char information_message[45 + strlen(result_18_fullname)];
 			snprintf(information_message, sizeof(information_message), "full_name() execution result for step 18: \"%s\"", result_18_fullname);
 			
 			const unsigned short messagesc = 8;
