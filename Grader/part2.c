@@ -22,7 +22,7 @@ int part2(git_repository* repository) {
 	git_reference* reference_part2;
 	ret = git_branch_lookup(&reference_part2, repository, "origin/part2", GIT_BRANCH_REMOTE);
 	if (ret < 0) {
-		const unsigned short messagesc = 1;
+		const unsigned short int messagesc = 1;
 		struct val_message_t messagesv[1] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -43,7 +43,7 @@ int part2(git_repository* repository) {
 	ret = git_branch_lookup(&reference_main, repository, "origin/main", GIT_BRANCH_REMOTE);
 	if (ret < 0) {
 		git_reference_free(reference_part2);
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -81,7 +81,7 @@ int part2(git_repository* repository) {
 	
 	// Check that the OIDs aren’t zero
 	if (git_oid_is_zero(&oid_commit_part2) || git_oid_is_zero(&oid_commit_main)) {
-		const unsigned short messagesc = 1;
+		const unsigned short int messagesc = 1;
 		struct val_message_t messagesv[1] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -99,7 +99,7 @@ int part2(git_repository* repository) {
 	
 	// Check that these aren’t the first commits
 	if (first_part2 || first_main) {
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -135,7 +135,7 @@ int part2(git_repository* repository) {
 	const char* commit_message_part2 = git_commit_message(commit_part2);
 	const size_t end_part2 = MAX(strcspn(commit_message_part2, "\f\n\r"), 1);
 	char commit_message_own_part2[end_part2 + 1];
-	for (unsigned long i = 0; i <= end_part2; i++) {
+	for (unsigned long int i = 0; i <= end_part2; i++) {
 		commit_message_own_part2[i] = '\0';
 	}
 	strncpy(commit_message_own_part2, commit_message_part2, end_part2);
@@ -148,7 +148,7 @@ int part2(git_repository* repository) {
 	const char* commit_message_main = git_commit_message(commit_main);
 	const size_t end_main = MAX(strcspn(commit_message_main, "\f\n\r"), 1);
 	char commit_message_own_main[end_main + 1];
-	for (unsigned long i = 0; i <= end_main; i++) {
+	for (unsigned long int i = 0; i <= end_main; i++) {
 		commit_message_own_main[i] = '\0';
 	}
 	strncpy(commit_message_own_main, commit_message_main, end_main);
@@ -157,7 +157,7 @@ int part2(git_repository* repository) {
 	
 	if (strncmp(COMMIT_MESSAGE_PREFIX, commit_message_own_part2, 8) == 0 && strncmp(COMMIT_MESSAGE_PREFIX, commit_message_own_main, 8) == 0) {
 		if (end_part2 == end_main && strncmp(commit_message_own_part2, commit_message_own_main, MIN(end_part2, end_main)) == 0) {
-			const unsigned short messagesc = 1;
+			const unsigned short int messagesc = 1;
 			struct val_message_t messagesv[1] = {
 				{
 					VAL_STATUS_FAILURE,
@@ -207,7 +207,7 @@ int part2(git_repository* repository) {
 			char information_message_main[55 + strlen(result_main)];
 			snprintf(information_message_main, sizeof(information_message_main), "alyssa() execution result on the “main” branch: \"%s\"", result_main);
 			
-			const unsigned short messagesc = 6;
+			const unsigned short int messagesc = 6;
 			struct val_message_t messagesv[6] = {
 				{
 					VAL_STATUS_SUCCESS,
@@ -257,7 +257,7 @@ int part2(git_repository* repository) {
 			
 			char warning_message[65 + strlen(name_branch) + strlen(name_function)];
 			snprintf(warning_message, sizeof(warning_message), "Check that your code in the “%s” branch defines a function %s().", name_branch, name_function);
-			const unsigned short messagesc = 4;
+			const unsigned short int messagesc = 4;
 			struct val_message_t messagesv[4] = {
 				{
 					VAL_STATUS_SUCCESS,
@@ -285,7 +285,7 @@ int part2(git_repository* repository) {
 		} else {
 			char warning_message[77 + strlen(FILE_STUDENT)];
 			snprintf(warning_message, sizeof(warning_message), "Check that your Python file is named “%s” and that your syntax is correct.", FILE_STUDENT);
-			const unsigned short messagesc = 4;
+			const unsigned short int messagesc = 4;
 			struct val_message_t messagesv[4] = {
 				{
 					VAL_STATUS_SUCCESS,
@@ -324,7 +324,7 @@ int part2(git_repository* repository) {
 		char information_message_main[39 + strlen(commit_message_own_main)];
 		snprintf(information_message_main, sizeof(information_message_main), "Your “main” commit message: “%s”", commit_message_own_main);
 		
-		const unsigned short messagesc = 5;
+		const unsigned short int messagesc = 5;
 		struct val_message_t messagesv[5] = {
 			{
 				VAL_STATUS_SUCCESS,

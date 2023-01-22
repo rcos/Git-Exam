@@ -22,7 +22,7 @@ int part6(git_repository* repository) {
 	git_reference* reference;
 	ret = git_branch_lookup(&reference, repository, "origin/main", GIT_BRANCH_REMOTE);
 	if (ret < 0) {
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -57,7 +57,7 @@ int part6(git_repository* repository) {
 	
 	// Check that the OIDs aren’t zero
 	if (git_oid_is_zero(&oid_commit_13) || git_oid_is_zero(&oid_commit_9) || git_oid_is_zero(&oid_commit_4) || git_oid_is_zero(&oid_commit_18)) {
-		const unsigned short messagesc = 1;
+		const unsigned short int messagesc = 1;
 		struct val_message_t messagesv[1] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -98,7 +98,7 @@ int part6(git_repository* repository) {
 	unsigned int parentcount_4 = git_commit_parentcount(commit_4);
 	unsigned int parentcount_18 = git_commit_parentcount(commit_18);
 	if (parentcount_13 != 1 || parentcount_9 != 1 || parentcount_4 != 1 || parentcount_18 != 1) {
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -133,7 +133,7 @@ int part6(git_repository* repository) {
 		e_force();
 	}
 	e(fseek(fp, 0, SEEK_END));
-	long setup_size = ftell(fp);
+	long int setup_size = ftell(fp);
 	if (setup_size < 0) {
 		fprintf(stderr, "Failed to get the size of the setup file\n");
 		fclose(fp);
@@ -147,7 +147,7 @@ int part6(git_repository* repository) {
 		e_force();
 	}
 	char setup_str[setup_size + sizeof(char)];
-	unsigned long setup_end = fread(setup_str, sizeof(char), setup_size, fp);
+	unsigned long int setup_end = fread(setup_str, sizeof(char), setup_size, fp);
 	if (ferror(fp)) {
 		fprintf(stderr, "Failed to read the setup file\n");
 		fclose(fp);
@@ -182,7 +182,7 @@ int part6(git_repository* repository) {
 			char information_message[45 + strlen(result_13_fullname)];
 			snprintf(information_message, sizeof(information_message), "full_name() execution result for step 13: \"%s\"", result_13_fullname);
 			
-			const unsigned short messagesc = 3;
+			const unsigned short int messagesc = 3;
 			struct val_message_t messagesv[3] = {
 				{
 					VAL_STATUS_FAILURE,
@@ -207,7 +207,7 @@ int part6(git_repository* repository) {
 		}
 	} else if (eval_failed_13_fullname) {
 		val_python_free(context_13);
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -241,7 +241,7 @@ int part6(git_repository* repository) {
 			char information_message[44 + strlen(result_13_conflict)];
 			snprintf(information_message, sizeof(information_message), "conflict() execution result for step 13: \"%s\"", result_13_conflict);
 			
-			const unsigned short messagesc = 4;
+			const unsigned short int messagesc = 4;
 			struct val_message_t messagesv[4] = {
 				{
 					VAL_STATUS_SUCCESS,
@@ -270,7 +270,7 @@ int part6(git_repository* repository) {
 		}
 	} else if (eval_failed_13_conflict) {
 		val_python_free(context_13);
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -304,7 +304,7 @@ int part6(git_repository* repository) {
 			char information_message[41 + strlen(result_13_hours)];
 			snprintf(information_message, sizeof(information_message), "hours() execution result for step 13: \"%s\"", result_13_hours);
 			
-			const unsigned short messagesc = 5;
+			const unsigned short int messagesc = 5;
 			struct val_message_t messagesv[5] = {
 				{
 					VAL_STATUS_SUCCESS,
@@ -337,7 +337,7 @@ int part6(git_repository* repository) {
 		}
 	} else if (eval_failed_13_hours) {
 		val_python_free(context_13);
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -390,7 +390,7 @@ int part6(git_repository* repository) {
 			char information_message[43 + strlen(result_9_conflict)];
 			snprintf(information_message, sizeof(information_message), "conflict() execution result for step 9: \"%s\"", result_9_conflict);
 			
-			const unsigned short messagesc = 6;
+			const unsigned short int messagesc = 6;
 			struct val_message_t messagesv[6] = {
 				{
 					VAL_STATUS_SUCCESS,
@@ -427,7 +427,7 @@ int part6(git_repository* repository) {
 		}
 	} else if (eval_failed_9_conflict) {
 		val_python_free(context_9);
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -479,7 +479,7 @@ int part6(git_repository* repository) {
 			char information_message[44 + strlen(result_4_fullname)];
 			snprintf(information_message, sizeof(information_message), "full_name() execution result for step 4: \"%s\"", result_4_fullname);
 			
-			const unsigned short messagesc = 7;
+			const unsigned short int messagesc = 7;
 			struct val_message_t messagesv[7] = {
 				{
 					VAL_STATUS_SUCCESS,
@@ -520,7 +520,7 @@ int part6(git_repository* repository) {
 		}
 	} else if (eval_failed_4_fullname) {
 		val_python_free(context_4);
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -573,7 +573,7 @@ int part6(git_repository* repository) {
 			char information_message[45 + strlen(result_18_fullname)];
 			snprintf(information_message, sizeof(information_message), "full_name() execution result for step 18: \"%s\"", result_18_fullname);
 			
-			const unsigned short messagesc = 8;
+			const unsigned short int messagesc = 8;
 			struct val_message_t messagesv[8] = {
 				{
 					VAL_STATUS_SUCCESS,
@@ -618,7 +618,7 @@ int part6(git_repository* repository) {
 		}
 	} else if (eval_failed_18_fullname) {
 		val_python_free(context_18);
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -647,7 +647,7 @@ int part6(git_repository* repository) {
 	
 	// MARK: - End
 	
-	const unsigned short messagesc = 2;
+	const unsigned short int messagesc = 2;
 	struct val_message_t messagesv[2] = {
 		{
 			VAL_STATUS_SUCCESS,
@@ -669,7 +669,7 @@ int part6(git_repository* repository) {
 invalid_code:;
 	char warning_message_invalid[115 + strlen(FILE_STUDENT)];
 	snprintf(warning_message_invalid, sizeof(warning_message_invalid), "Check that your Python file is named “%s”, that your syntax is correct, and that you solved all merge conflicts.", FILE_STUDENT);
-	const unsigned short messagesc_invalid = 2;
+	const unsigned short int messagesc_invalid = 2;
 	struct val_message_t messagesv_invalid[2] = {
 		{
 			VAL_STATUS_FAILURE,

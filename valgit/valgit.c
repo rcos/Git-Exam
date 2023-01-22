@@ -248,7 +248,7 @@ int git_nth_commit_oid(git_oid* oid, bool* first, unsigned int n, const unsigned
 			const char* commit_message = git_commit_message(commit);
 			const size_t end = MAX(strcspn(commit_message, "\f\n\r"), 1);
 			char commit_message_own[end + 1];
-			for (unsigned long i = 0; i <= end; i++) {
+			for (unsigned long int i = 0; i <= end; i++) {
 				commit_message_own[i] = '\0';
 			}
 			strncpy(commit_message_own, commit_message, end);
@@ -298,7 +298,7 @@ int git_nth_commit_oid(git_oid* oid, bool* first, unsigned int n, const unsigned
 	return 0;
 }
 
-json_object* json_create_val_success(double score, const struct val_message_t messagesv[], unsigned short messagesc) {
+json_object* json_create_val_success(double score, const struct val_message_t messagesv[], unsigned short int messagesc) {
 	e_init();
 	
 	if (score < 0 || score > 1) {
@@ -354,7 +354,7 @@ json_object* json_create_val_success(double score, const struct val_message_t me
 		}
 		ptrs_json_add(array_message);
 		
-		for (unsigned short i = 0; i < messagesc; i++) {
+		for (unsigned short int i = 0; i < messagesc; i++) {
 			// Create a message object
 			json_object* object_message = json_object_new_object();
 			if (!object_message) {
@@ -820,7 +820,7 @@ char* val_file_str(FILE* fp) {
 	e_init();
 	
 	e_ret_null(fseek(fp, 0, SEEK_END));
-	long size = ftell(fp);
+	long int size = ftell(fp);
 	if (size < 0) {
 		fprintf(stderr, "Failed to get file size\n");
 		e_ret_null_force();
@@ -833,7 +833,7 @@ char* val_file_str(FILE* fp) {
 	}
 	char* str = malloc(size + 1);
 	str[0] = '\0';
-	unsigned long i = 0;
+	unsigned long int i = 0;
 	while (!feof(fp)) {
 		unsigned char next = fgetc(fp);
 		switch (next) {

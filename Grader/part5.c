@@ -22,7 +22,7 @@ int part5(git_repository* repository) {
 	git_reference* reference;
 	ret = git_branch_lookup(&reference, repository, "origin/main", GIT_BRANCH_REMOTE);
 	if (ret < 0) {
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -52,7 +52,7 @@ int part5(git_repository* repository) {
 	
 	// Check that the OID isn’t zero
 	if (git_oid_is_zero(&oid_commit_13)) {
-		const unsigned short messagesc = 1;
+		const unsigned short int messagesc = 1;
 		struct val_message_t messagesv[1] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -70,7 +70,7 @@ int part5(git_repository* repository) {
 	
 	// Check that this isn’t the first commit
 	if (first) {
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -97,7 +97,7 @@ int part5(git_repository* repository) {
 	
 	unsigned int parentcount = git_commit_parentcount(commit);
 	if (parentcount != 2) {
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -123,7 +123,7 @@ int part5(git_repository* repository) {
 	const char* commit_message = git_commit_message(commit);
 	const size_t end = MAX(strcspn(commit_message, "\f\n\r"), 1);
 	char commit_message_own[end + 1];
-	for (unsigned long i = 0; i <= end; i++) {
+	for (unsigned long int i = 0; i <= end; i++) {
 		commit_message_own[i] = '\0';
 	}
 	strncpy(commit_message_own, commit_message, end);
@@ -163,7 +163,7 @@ int part5(git_repository* repository) {
 			char information_message_willy[29 + strlen(result_willy)];
 			snprintf(information_message_willy, sizeof(information_message_willy), "willy() execution result: \"%s\"", result_willy);
 			
-			const unsigned short messagesc = 6;
+			const unsigned short int messagesc = 6;
 			struct val_message_t messagesv[6] = {
 				{
 					VAL_STATUS_SUCCESS,
@@ -211,7 +211,7 @@ int part5(git_repository* repository) {
 			
 			char warning_message[44 + strlen(name_function)];
 			snprintf(warning_message, sizeof(warning_message), "Check that your code defines a function %s().", name_function);
-			const unsigned short messagesc = 4;
+			const unsigned short int messagesc = 4;
 			struct val_message_t messagesv[4] = {
 				{
 					VAL_STATUS_SUCCESS,
@@ -239,7 +239,7 @@ int part5(git_repository* repository) {
 		} else {
 			char warning_message[114 + strlen(FILE_STUDENT)];
 			snprintf(warning_message, sizeof(warning_message), "Check that your Python file is named “%s”, that your syntax is correct, and that you solved the merge conflict.", FILE_STUDENT);
-			const unsigned short messagesc = 4;
+			const unsigned short int messagesc = 4;
 			struct val_message_t messagesv[4] = {
 				{
 					VAL_STATUS_SUCCESS,
@@ -274,7 +274,7 @@ int part5(git_repository* repository) {
 		char information_message[28 + strlen(commit_message_own)];
 		snprintf(information_message, sizeof(information_message), "Your commit message: “%s”", commit_message_own);
 		
-		const unsigned short messagesc = 4;
+		const unsigned short int messagesc = 4;
 		struct val_message_t messagesv[4] = {
 			{
 				VAL_STATUS_SUCCESS,

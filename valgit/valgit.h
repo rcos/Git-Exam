@@ -131,7 +131,7 @@ void ptrs_python_free2(struct ptrs_python_t* ptrs_python);
 
 int git_nth_commit_oid(git_oid* oid, bool* first, unsigned int n, const unsigned int pathv[], unsigned int pathc, const char* path_start, const git_reference* ref, git_repository* repo);
 
-json_object* json_create_val_success(double score, const struct val_message_t messagesv[], unsigned short messagesc);
+json_object* json_create_val_success(double score, const struct val_message_t messagesv[], unsigned short int messagesc);
 
 json_object* json_create_val_failure(struct val_message_t message);
 

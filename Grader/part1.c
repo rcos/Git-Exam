@@ -22,7 +22,7 @@ int part1(git_repository* repository) {
 	git_reference* reference;
 	ret = git_branch_lookup(&reference, repository, "origin/main", GIT_BRANCH_REMOTE);
 	if (ret < 0) {
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -51,7 +51,7 @@ int part1(git_repository* repository) {
 	
 	// Check that the OID isn’t zero
 	if (git_oid_is_zero(&oid_commit)) {
-		const unsigned short messagesc = 1;
+		const unsigned short int messagesc = 1;
 		struct val_message_t messagesv[1] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -68,7 +68,7 @@ int part1(git_repository* repository) {
 	
 	// Check that this isn’t the first commit
 	if (first) {
-		const unsigned short messagesc = 2;
+		const unsigned short int messagesc = 2;
 		struct val_message_t messagesv[2] = {
 			{
 				VAL_STATUS_FAILURE,
@@ -99,7 +99,7 @@ int part1(git_repository* repository) {
 	const char* commit_message = git_commit_message(commit);
 	const size_t end = MAX(strcspn(commit_message, "\f\n\r"), 1);
 	char commit_message_own[end + 1];
-	for (unsigned long i = 0; i <= end; i++) {
+	for (unsigned long int i = 0; i <= end; i++) {
 		commit_message_own[i] = '\0';
 	}
 	strncpy(commit_message_own, commit_message, end);
@@ -122,7 +122,7 @@ int part1(git_repository* repository) {
 			bool correct = strcmp(result, "Rensselaer Center for Open Source") == 0;
 			char information_message[28 + strlen(result)];
 			snprintf(information_message, sizeof(information_message), "rcos() execution result: \"%s\"", result);
-			const unsigned short messagesc = 4;
+			const unsigned short int messagesc = 4;
 			struct val_message_t messagesv[4] = {
 				{
 					VAL_STATUS_SUCCESS,
@@ -148,7 +148,7 @@ int part1(git_repository* repository) {
 			ptrs_json_add(json);
 			e_json(json_object_to_file(FILE_RESULTS, json));
 		} else if (eval_failed) {
-			const unsigned short messagesc = 4;
+			const unsigned short int messagesc = 4;
 			struct val_message_t messagesv[4] = {
 				{
 					VAL_STATUS_SUCCESS,
@@ -176,7 +176,7 @@ int part1(git_repository* repository) {
 		} else {
 			char warning_message[77 + strlen(FILE_STUDENT)];
 			snprintf(warning_message, sizeof(warning_message), "Check that your Python file is named “%s” and that your syntax is correct.", FILE_STUDENT);
-			const unsigned short messagesc = 4;
+			const unsigned short int messagesc = 4;
 			struct val_message_t messagesv[4] = {
 				{
 					VAL_STATUS_SUCCESS,
@@ -211,7 +211,7 @@ int part1(git_repository* repository) {
 		char information_message[28 + strlen(commit_message_own)];
 		snprintf(information_message, sizeof(information_message), "Your commit message: “%s”", commit_message_own);
 		
-		const unsigned short messagesc = 4;
+		const unsigned short int messagesc = 4;
 		struct val_message_t messagesv[4] = {
 			{
 				VAL_STATUS_SUCCESS,

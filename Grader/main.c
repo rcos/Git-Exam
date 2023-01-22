@@ -41,7 +41,7 @@ int main(int argc, const char* const argv[]) {
 	e_git(ret);
 	if (!repository) {
 		if (access_public) {
-			const unsigned short messagesc = 2;
+			const unsigned short int messagesc = 2;
 			struct val_message_t messagesv[2] = {
 				{
 					VAL_STATUS_FAILURE,
@@ -87,7 +87,7 @@ int main(int argc, const char* const argv[]) {
 				warning_message = "Check that you submitted the correct SSH clone URL and that you properly configured the deploy key.";
 			}
 			val_error_message_git(-1);
-			const unsigned short messagesc = 2;
+			const unsigned short int messagesc = 2;
 			struct val_message_t messagesv[2] = {
 				{
 					VAL_STATUS_FAILURE,
