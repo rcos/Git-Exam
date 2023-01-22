@@ -67,12 +67,12 @@
 
 /* Begin PBXFileReference section */
 		C05553F5295D18CA0075E57D /* Grader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Grader; sourceTree = BUILT_PRODUCTS_DIR; };
-		C05553FE295D1AC00075E57D /* libgit2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgit2.a; path = ../../../../../../../opt/homebrew/Cellar/libgit2/1.5.0/lib/libgit2.a; sourceTree = "<group>"; };
+		C05553FE295D1AC00075E57D /* libgit2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgit2.a; path = /opt/homebrew/lib/libgit2.a; sourceTree = "<group>"; };
 		C0555400295D1AE30075E57D /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		C0555403295D1B360075E57D /* libSystem.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libSystem.tbd; path = usr/lib/libSystem.tbd; sourceTree = SDKROOT; };
 		C0555405295D1B5B0075E57D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		C055541B295DEA5A0075E57D /* libvalgit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libvalgit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0555426295E1E900075E57D /* libjson-c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjson-c.a"; path = "../../../../../../../opt/homebrew/Cellar/json-c/0.16/lib/libjson-c.a"; sourceTree = "<group>"; };
+		C0555426295E1E900075E57D /* libjson-c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjson-c.a"; path = "/opt/homebrew/lib/libjson-c.a"; sourceTree = "<group>"; };
 		C055542C295E817C0075E57D /* Python3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python3.framework; path = Library/Frameworks/Python3.framework; sourceTree = DEVELOPER_DIR; };
 		C05554632964FE580075E57D /* valgit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = valgit.c; sourceTree = "<group>"; };
 		C05554642964FE580075E57D /* valgit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = valgit.h; sourceTree = "<group>"; };
@@ -348,8 +348,7 @@
 					/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Headers,
 				);
 				LIBRARY_SEARCH_PATHS = (
-					/opt/homebrew/Cellar/libgit2/1.5.0/lib,
-					"/opt/homebrew/Cellar/json-c/0.16/lib",
+					"/opt/homebrew/lib/**",
 					/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -409,8 +408,7 @@
 					/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Headers,
 				);
 				LIBRARY_SEARCH_PATHS = (
-					/opt/homebrew/Cellar/libgit2/1.5.0/lib,
-					"/opt/homebrew/Cellar/json-c/0.16/lib",
+					"/opt/homebrew/lib/**",
 					/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
